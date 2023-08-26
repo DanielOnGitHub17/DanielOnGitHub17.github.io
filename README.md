@@ -1,4 +1,10 @@
-# DanielOnGitHub17.github.io
-Holds all my projects
-My first website
-My name is a boy
+<html>
+  <head>
+    <title>Daniel's First Website</title>
+  </head>
+  <body>
+    <div>
+      Welcome to my life. I hope you like 
+    </div>
+  </body>
+</html>
