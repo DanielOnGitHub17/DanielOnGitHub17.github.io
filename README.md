@@ -4,7 +4,7 @@
   </head>
   <body>
     <div>
-      Welcome to my life. I hope you like 
+      Welcome!
     </div>
   </body>
 </html>
