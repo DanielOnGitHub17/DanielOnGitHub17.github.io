@@ -25,3 +25,6 @@ nav a:active{
   background: darkgreen;
   color: white
 }
+nav a.naval{
+  filter: grayscale(0.5)
+}
