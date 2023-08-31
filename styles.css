@@ -1,1 +1,12 @@
-
+nav ul{
+  display: flex;
+  margin: 30px;
+  justify-content: center;
+}
+nav ul li{
+  background: green
+}
+nav ul li a{
+  display: block;
+  text-decoraton: none;
+}
