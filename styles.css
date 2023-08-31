@@ -6,7 +6,7 @@ nav ul{
   gap: 1em;
 }
 nav{
-  border: 4px double green
+  border: 4px double green;
 }
 nav a{
   padding: 20px;
@@ -15,16 +15,16 @@ nav a{
   text-decoration: none;
   color: white;
   display: block;
-  transition: 0.2s
+  transition: 0.2s;
 }
 nav a:hover{
   background: limegreen;
-  color: gray
+  color: gray;
 }
 nav a:active{
   background: darkgreen;
-  color: white
+  color: white;
 }
 nav a.naval{
-  filter: grayscale(0.5)
+  filter: grayscale(0.5);
 }
