@@ -2,11 +2,24 @@ nav ul{
   display: flex;
   margin: 30px;
   justify-content: center;
+  list-style-type: none;
+  gap: 1em;
 }
-nav ul li{
-  background: green
+nav{
+  border: 4px double green
 }
-nav ul li a{
+nav a{
+  padding: 20px;
+  background: green;
+  border-radius: 2em;
+  text-decoration: none;
+  color: white;
   display: block;
-  text-decoraton: none;
+  transition: 0.4s
+}
+nav a:hover{
+  background: limegreen;
+}
+nav a:active{
+  background: darkgreen;
 }
