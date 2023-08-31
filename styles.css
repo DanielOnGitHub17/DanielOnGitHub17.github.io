@@ -26,5 +26,5 @@ nav a:active{
   color: white;
 }
 nav a.naval{
-  filter: grayscale(0.5);
+  opacity: 0.6;
 }
