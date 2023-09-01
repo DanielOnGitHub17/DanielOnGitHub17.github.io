@@ -1,0 +1,373 @@
+*{
+/*     box-sizing: border-box; */
+}
+/* timestamp: id6 most of below mar3,23; Mar15-16 2023 (night/morn) */
+body{
+    font-family: monospace;
+    font-size: 1.2em;
+}
+button, input, select{
+    border: none;
+    background: linen;
+    border-top: 1px solid #ffac24;
+    border-right: 1px solid #ffac24;
+    margin: .3vh .2vw;
+    cursor: pointer;
+    color: black; transition: transform .3s;
+}
+button:hover, input:hover, select:hover, option:hover
+,button:focus, input:focus, select:focus{
+    background: papayawhip; border: 1px solid #ffac24;
+    transform: scale(1.5); outline: none;
+}
+{
+    outline: 1px solid chocolate; transform: scale(1.5);
+}
+option:focus, [type=checkbox]:focus{
+    outline: 1px solid chocolate
+}
+button:active, input:active, select:active, option:hover{
+    background: #ffdda6; border: 1px solid chocolate;
+    outline: none;
+}
+
+#pathdiv{
+    margin: 0;
+    padding-left: 1em;
+}
+#actionsPane{
+/*     background: #efefef; */
+    border: 2px solid chocolate;
+    border-left: none;border-right: none;
+     display: flex;
+    height: 20vh;
+    align-items: center;
+    justify-content: center;
+}
+#actionsPane>div{
+    padding: 1vh 2vw;
+    width: fit-content;
+    border: 1px solid chocolate;
+    border-top: none;border-bottom: none;
+    margin: 1vh .5vw;
+}
+#actionsPane>div>h4{
+    border: 1px solid chocolate;
+    border-right: none;border-top: none;
+/*     width: fit-content; */
+    padding: 0 1em .1em;
+}
+#actionsPane input{
+    text-transform: capitalize;
+/*     padding: 0; margin: 0; */
+}
+#thide{
+/*     position: absolute; */
+    width: 2em; height: 2em;
+    background: transparent;
+    top: 0; left: calc(100% - 5em);
+    transform: scaleX(2.5);
+}
+
+/*archives, folders, and files container*/
+#maincontainer{
+/*     margin: 2rem; */
+     height: 76vh;
+    overflow: scroll;
+}
+.container>div{
+    height: 45vh; padding: 2vh;
+    border-top: 2px solid chocolate;
+    overflow: scroll;
+}
+.container>div>h3, .info{
+    border-bottom: 1.5px solid chocolate;
+    border-left: 1.5px solid chocolate;
+    padding-left: 1em;
+}
+.container>div>h3>*{
+/*     margin-top: -2.5rem; */
+    float: right; margin-right: 2vw;
+    width: 2.5em; border: 1px solid chocolate;
+}
+.info{
+    border-width: 1px;
+    margin-left: 4em;
+    border-top;
+}
+/*end archives, folders, and files container*/
+/* properties */
+#propertiesDiv{
+    position: fixed;
+/*     width: 20vw; height: 20vh; */
+    z-index: 100; background: white;
+    color: black;
+    border: 1px solid chocolate;
+    box-shadow: 2px 2px 5px gray;
+}
+/* end properties */
+/*files styles*/
+.icon/*file*/{
+    border: 2px solid chocolate;
+    width: 6rem;
+    height: 6.5rem;
+    border-top-right-radius: 2em;
+    padding: .5em;
+    display: inline-block;
+    background: linear-gradient(0deg, #a25000, #f7a52b 50%, white 50%, white);
+    background: none;
+    margin: 1vh 1vw;
+    color: white;
+}
+.icon[selected=true]{filter: grayscale(.5); border: 2px solid #faf0e6;}
+.inputshold>*/*.selectar, .downloadar, .uploadar*, 'pausar'*/{
+    float: left;
+    height: -webkit-fill-available;
+    width: 20%;
+    margin: 0 0 0 .2rem;
+    padding: 0 0 10px 0;
+    border: 1px solid chocolate;
+    text-align: center;
+    font-weight: 900;
+}
+.selectar{margin-left: .2rem;}
+.inputshold{height: 1.4rem;}
+.beautifiar{
+    background: white;
+    /* border: 2px solid #a25000; */
+    box-sizing: border-box;
+    height: 50%;
+    margin-top: .1em;
+    border-left-width: 1.5rem;
+    border-right-width: 1.5rem;
+    background: linear-gradient(20deg, chocolate 20%, white 30%, white 70%, chocolate 80%);
+}
+.namar{
+    margin-top: .1em;
+    padding-left: .3em;
+    border: 2px inset chocolate;
+    background: #f7a52b;
+    background: chocolate;
+    background: linen;
+    overflow: hidden;
+     height: 1rem;
+    color: white; color: black;
+}
+.extendar{
+    width: 50%; padding-right: 0px; height: auto;
+}
+[disabled]{filter: grayscale(1)}
+.loadingar{
+    background: #f7a52b;
+    --p: 0%;
+    background: linear-gradient(90deg, #f7a52b, #f7a52b var(--p),
+    white var(--p), white);
+    width: 100%;
+    border: 3px solid #a25000;
+    box-sizing: border-box;
+    border-top-width: .1px;border-bottom-width: .1px;
+    height: 5%; margin: 0 0px 3px -3px;
+}
+/*end files styles*/
+/* Accessories */
+#accessories{
+    display: flex;
+    position: relative;
+    background:  linen;
+    height: 10vh; margin: 1vh; padding: 1vh 2vw; border: 1px solid chocolate;
+    align-items: center;
+    font-size: 4em;
+}
+#accessories>*{
+    width: 7vh; height: 7vh;
+    border: inherit;
+    background: linear-gradient(45deg, chocolate, white 40%, chocolate 50%);
+    border-color: black;
+    margin-right: 2vh;
+    border-radius: .2em;
+    box-shadow: 1px 1px 4px;
+    cursor: pointer;
+}
+#accessories>*:active{
+    box-shadow: none
+}
+body>.accessory{
+    position: absolute;
+    top: calc(10vh); width: 60vw;
+    left: 12vh;
+    background: white;
+    border: 5px double chocolate;
+    padding: 3vh 3vw; transition: .5s transform;
+}
+.accessory>*:not(hr){
+    padding: 0.5em 1em;clear:both;
+    border: 1px solid chocolate;
+    border-bottom: none; border-right: none;
+}
+.accessory>h2{}
+.buttonsfortools{
+    position: absolute;
+    top: 10%; left: 90%;
+    background: #faf0e6;
+    font-family: monospace
+}
+.accessory button{
+    margin: 0;
+    background:unset;
+    border: 2px solid chocolate;
+    box-sizing: border-box;
+    zoom: 1.2;
+    transition-duration: .3s; 
+}
+.accessory button:hover{
+    transform: scale(1.5);
+/*     color: white; */
+    background: var(--ho);
+    color: var(--ha);
+    border-radius: 1em
+}
+.closebutton{
+    --ho: red;
+    --ha: white
+}
+.minimizebutton{
+    --ho: #cacaca;
+}
+.accessory>.buttonsfortools{
+    border: none;
+    padding: 0;
+}
+hr{
+    height: 1.6vh;
+    background: chocolate;
+    background: linear-gradient(90deg, chocolate, chocolate 30%,
+    white 50%, white);
+    border: 3px solid #f7a52b;
+    border-top-width: 1px; border-bottom-width: 1px;
+}
+.objectsContainer{
+    overflow: scroll;
+    height: 20vh;
+}
+.fileslist{
+    display: flex;
+    flex-wrap: wrap;
+    /*     display: none */
+}
+
+.iconref{
+    padding: 10px;
+    border: 2px solid chocolate;
+    margin: .2vh .4vw
+}
+.accessory h4{
+    border: inherit;
+    padding: inherit;
+}
+.compressbutton, .extractbutton{
+    float: right;;
+    --ho: linear-gradient(45deg, chocolate, chocolate 50%, white 50%, white);
+    --ha: #474747
+}
+.compressionoptions>ul {
+    padding-left: 1em;
+/*     list-style: inherit; */
+}
+.compressionoptions>ul>li{
+    border: 1px solid chocolate;
+    border-right: none; border-bottom: none;
+    padding: 0 0em .4em 1em; margin-bottom: 1em
+}
+.accessory [type=radio]{
+/*     float: left; */
+/*     margin-right: .5em; */
+}
+#accessories .accessory *{
+    display: none;
+}
+.complevel{
+    --msg: '5';
+}
+.complevel:before{
+    content: var(--msg);
+    border: 1px solid chocolate;
+    padding: 1vh 1vh;
+    position: absolute;
+    bottom: 2vh; right: 30vw;
+}
+.addtolist{
+    float: right;
+    margin-top: 4.5vh;
+    width: 3em;
+    border: 1px solid chocolate;
+    box-sizing: border-box;
+}
+/* //extractor */
+/*widgets*/
+/* maybe later separate to various style files */
+.widget{
+    box-sizing: border-box;
+    width: 54vh;
+    box-shadow: -1px 1px 19px -5px brown;
+    border: 2px solid chocolate;
+    position: fixed;
+    z-index: 32;
+    background: white;
+    top: 30vh;
+    left: calc(50vw - 27vh);
+    transform: scale(0);
+    transition: .4s transform;
+    padding: 2vh 2vh 4vh 3vh;
+    border-radius: 1em;
+    /*     text-align: center; */
+}
+.widget>.closar{
+    float: right;
+    box-sizing: border-box;
+    width: 5vh; height: 5vh;
+    border-radius: 32em;
+    --ho: white;
+    --ha: red;
+    font-size: 1em;
+    display: flex; justify-content: center; align-items: center;
+}
+.widget>button{
+    background: white;
+    border: 2px solid chocolate;
+    border-radius: 10px;
+    padding: 1vh; width: 11.5vh;
+    transition: .5s;
+    display: block;
+}
+.widget>input{
+    display: block; margin-bottom: 2vh;
+    background: unset; border: 2px solid chocolate;
+    padding: .2em 1em; cursor: unset;
+    width: -webkit-fill-available;
+    border-radius: 5px;
+}
+.widget>.ok{
+    float: right;
+    --ho: white; --ha: chocolate
+}
+.widget>.cancel{
+    float: left;
+}
+.widget>button:hover{
+    transform: scale(1.5);
+    background:  var(--ha);
+    color: var(--ho);
+    border: thin solid black
+}
+.widget>.text{
+    clear: right;
+    overflow-x:  overlay
+}
+.widget>*{
+    font-weight: ;}
+#alertBox .ok, #alertBox .inputbox{
+    display: none;
+}
+#confirmBox .inputbox{
+    display: none
+}

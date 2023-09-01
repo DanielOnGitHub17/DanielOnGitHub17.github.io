@@ -1,0 +1,98 @@
+timestamp-id1: 17:09 feb 25 2023
+for the web:
+there will be an editing interface: for editing files
+normally and for editing files inside zip and dZip files;
+files: zip, txts, etc will all be saved 'online';
+I might have to do a login interface;
+user will have the choice to download the files either as
+zips -compression level: 8, dZip - compressed zips of compressed files
+
+Make it possible for files to be added to an archive (zip of dZip)
+
+try putting a copyright or sth in your dZip files 
+
+Js: When file is chosen make the file look nice
+like an icon or as if it was added to a list of files to be compressed;
+use drag and drop; to add files to archive;
+ you won't be able to drag and drop into a 'parent' only different;
+the icon will be like a DanFile class with many events: make another js file;
+you will be able to select all, unselect etc
+the files you'll be able to edit i.e. text files: html, css, js, txt, xml, etc;
+
+
+
+class DanFile{
+    methods: open- addEventListener(dblclick): window opens having
+    minimize, maximize and close buttons with ; close
+}
+
+maybe DanZipFile and DandZipFile will inherit from DanFile;
+and both should open windows to view their contents which would
+be able to be edited by tapping on them: opening new windows too
+which would be added to windows -an array
+
+
+classes to be defined -using separate JS files of course
+
+DanFile; DanZipFile; DandZipFile
+Window; Icon;
+
+
+images to use: txt.png, html.png, js.png, ....png; id3: zip.png, dZip.png, folder.png
+ask brother if he can do UIUX for you;
+
+timestamp-id2: 22:01 27 feb 2023
+link i.e. <a></a> download property to retrieve the zip files;
+only normal files, zips and dZips will be downloadable;
+maybe the Icon will have a download button near it: like in xender
+it will have both checkbox for selecting and drag select like fileexplorer
+: it will need good design
+
+timestamp-id3: 21:40 28 feb 2023;
+do an onauxclick on the div where files and folders are to show 
+a menu in which you can select 'sort by' and 'group by' options.
+Maybe there should be an upper tab for controling files like in fileexplorer:
+properties button, delete, sort by, group by, view (if possible), etc.
+the 'new item' button should have options: renaming to any unsported
+types will say error: unsported types will not have a 'open' method;
+maybe they will have a 'open as readonly text';
+i'll have to check all mime types to see which are text-based
+
+
+
+A typical user object:
+{
+    files: {'a.txt': {/*properties for each 'file' object*/}, b.html, etc}
+    ,archives: {
+        zips: {a.zip, b.zip}
+        , dZips: {c.dZip, g.dZip}
+     }
+    ,folders: {homethings, facebook, sd.s},
+    , username='Daniel', spaceused: 2097152,
+    //just for storage in main users.json file (or maybe there should
+    be no json file -only folders containing the names)
+    username: 'Daniel', email: 'balablue@gmail.com',
+    phone: 070..., password: 323223
+},
+properties for 'file' objects
+[size, date-created, date-modified, date-accessed, ]
+
+maybe in the back-end it file objects would either be from a class which
+inherits from pathlike or will just be pathlike;
+
+I might learn database: sqlite3/anyone else or just use additional functions
+to convert json data to what I want it to be;
+
+there might be a preview for html files: my next project (or I might
+do it before doing this one) will be to make a codepen: html, css, js + python
+for back-end: it will be easier just folders and files (4 types of files!)
+
+
+login.html do not need to have a back-end script: just use js to fetch
+users.json and check user and password;
+
+wait(()=>!wids[this.name].open
+                        , ()=>{
+                          this.close();
+                          setTimeout(()=>this.show(f, text, former, ok, cancel), 200)
+                        });
