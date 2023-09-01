@@ -1,0 +1,181 @@
+body{
+    margin: 10em;
+}
+#first{
+    position: relative;
+    transform: skew(10deg);
+    transition: .5s transform;
+}
+#first div{
+    width: 100px; height: 100px; border: 2px solid black;
+    position: absolute;
+    background: #ff0000;
+}
+#st {
+    transform: rotate(45deg) skew(-30deg,-30deg) translateY(-100px);
+}
+#nd{
+    transform: skewY(15deg) translate(53px,23px) scaleX(1.1);
+}
+#rd{
+    transform: skewY(-15deg) translate(167px,82px) scaleX(1.1)
+}
+#fh{
+    transform: skewY(15deg) translate(168px, -39px) scaleX(1.1)
+}
+#ft{
+    transform: skewY(-15deg) translate(54px,22px) scaleX(1.1)
+}
+#si{
+    transform: rotate(45deg) skew(-30deg,-30deg) translate(172px, 73px);
+}
+input[type='number']{
+    width: 40px;
+}
+#color{
+    position: absolute; top: 20;
+    margin: 0;
+}
+/*box*/
+body{
+    background: #f4a460a3;
+    background: linear-gradient(white, white, silver, white, white);
+}
+div{
+    transition-duration: .5s;
+}
+*{
+    transform-style: preserve-3d;
+    transform-origin: center;
+    box-sizing: border-box;
+}
+#box>div{
+    width: 100px; height: 100px;
+    position: absolute;
+    border: 1px solid black;
+/*     background: #00000066; */
+}
+.bottom{
+    background: #ff000099;
+    transform: translateZ(-50px);
+}
+.bottom, .top, .mid{
+/*     display: none; */
+}
+.top{
+    transform: translateZ(50px);
+    background: #ffa50099;
+}
+.mid{
+    transform: translateZ(0px);
+    background: white;
+/*     display: none; */
+}
+.left{
+    transform-origin: left center;
+    transform: rotateX(-90deg) translateZ(-50px);
+    background: #00800099;
+}
+.right{
+    transform-origin: right center;
+    transform: rotateX(90deg) translateZ(-50px);
+    background: #0000ff99;
+}
+.back{
+    transform-origin: top center;
+    transform: rotateY(90deg) translateZ(50px);
+    background: #4b008299;
+}
+.front{
+    transform-origin: bottom center;
+    transform: rotateY(-90deg) translateZ(50px);
+    background: #ee82ee99;
+}
+#box{
+    position: absolute;
+    top: 300px; left: 200px;
+    transform-origin: center;
+/*     transition-duration: 0s; */
+    width: fit-content;
+    height: fit-content;
+    width: 100px; height: 100px;
+}
+[id*=rotate]{
+     position: absolute;
+    top: 420px; left: 100px;
+    width: 360px;
+    --comment: 'Rotate along X-axis';
+}
+#rotateY{
+    transform-origin: left;
+    rotate: -90deg; left: 470px;
+    --comment: 'Rotate along Y-axis';
+}
+[id*=rotate]:after{
+    content: var(--comment);
+    font-size: 1.5em;
+    position: absolute; top: 30px; left: 100px;
+    z-index: 19;
+}
+#rotateZ{
+    transform-origin: left;
+    rotate: -45deg; top: 300px;
+    --comment: 'Rotate along Z-axis';
+    transform: translateZ(200px);
+}
+/* earth */
+/* 19 feb 2022 */
+#earth, #earth>div{
+    width: 150px; height: 150px;
+    transform-style: preserve-3d;
+}
+#earth>div{
+    border: 2px solid blue;
+    display: block;
+    position: absolute;
+    border-radius: 75px;
+    transform-origin: center;
+    background: radial-gradient(red 20%, orange 40%, yellow 60%, green 80%);
+}
+#earth>div:hover{
+    background: blue;
+    cursor: pointer;
+}
+#a{
+    transform: rotateY(90deg);
+}
+#b{
+    transform: rotateY(135deg);
+}
+#c{
+    transform: rotateY(180deg);
+}
+#d{
+    transform: rotateY(225deg);
+}
+.latitude{
+    transform: rotateX(90deg);
+}
+#equator{}
+#earth .cancer.down{
+    --z: -25px;
+}
+#earth .cancer{
+    --z: 20px;
+    width: 142px; height: 142px;
+    transform:
+     rotateX(90deg) 
+    translateZ(var(--z))
+    translateX(3.2px)
+}
+#earth .capricon.down{
+    --z: -60px;
+}
+#earth .capricon{
+    --z: 30px;
+    width: 120px; height: 120px;
+    transform: rotateX(90deg) translateZ(var(--z))
+    translateX(15px)
+}
+/* end earth */
+/* end for earth */

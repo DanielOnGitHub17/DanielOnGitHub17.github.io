@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>3d with divs</title>
+<link rel='stylesheet' href='3d.css'>
+</head>
+<body>
+<div id='first'>
+<div id='st'></div>
+<div id='nd'></div>
+<div id='rd'></div>
+<div id='fh'></div>
+<div id='ft'></div>
+<div id='si'></div>
+</div>
+<div id='color'>
+<label>Color: <input type='color'></label><br>
+<label>Transparency: <input type='number' max='255' min='0'></label>
+</div>
+I made a cube wow, 2 feb 2023:
+was sitting down front of that meat man shop in obangede near school
+of nursing, wating for daddy to buy tomato
+and the Holy Spirit told me to do it 'literally': how it actually is in
+real life 
+<input id='rotateX' type='range' data-type: 'number' value=0 min=-3600 max=3600 step=5>
+<input id='rotateY' type='range' data-type: 'number' value=0 min=-3600 max=3600 step=5>
+<input id='rotateZ' type='range' data-type: 'number' value=0 min=-3600 max=3600 step=5>
+<div id='box'>
+<div class='top'></div>
+<div class='bottom'></div>
+<div class='left'></div>
+<div class='right'></div>
+<div class='back'></div>
+<div class='mid'></div>
+<div class='front'></div>
+<script>
+let v = ``
+rotateX.onchange = rotateZ.onchange = rotateY.onchange =()=>box.style.transform=earth.style.transform=`rotateX(${rotateX.value}deg) rotateY(${rotateY.value}deg) rotateZ(${rotateZ.value}deg)`
+</script>
+</div>
+<div id='earth'>
+<div class='longitude' id='a'></div>
+<div class='longitude' id='b'></div>
+<div class='longitude' id='c'></div>
+<div class='longitude' id='d'></div>
+<div class='latitude' id='equator'></div>
+<div class='latitude cancer up'></div>
+<div class='latitude cancer down'></div>
+<div class='latitude capricon up'></div>
+<div class='latitude capricon down'></div>
+</div>
+<script src='3d.js'></script>
+</body>
+</html>

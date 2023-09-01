@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<title>The Earth</title>
+<style>@import url(earth.css)</style>
+</head>
+<body>
+<div id='controls'>
+<input id='rotateX' type='range' tab-index=1 data-type='number' value=0 min=-3600 max=3600 step=5>
+<input id='rotateY' type='range' tab-index=2 data-type='number' value=0 min=-3600 max=3600 step=5>
+<input id='rotateZ' type='range' tab-index=3 data-type='number' value=0 min=-3600 max=3600 step=5>
+<div id='ro'>check this box to roll: <input checked id='canroll' type='checkbox'></div>
+<div id='sto'>check this box to stop and reset: <input id='stopper' type='checkbox'></div>
+</div>
+<div id='earth'>
+<div class='longitude' id='a'></div>
+<div class='longitude' id='b'></div>
+<div class='longitude' id='c'></div>
+<div class='longitude' id='d'></div>
+<div class='latitude' id='equator'></div>
+<div class='latitude cancer up'></div>
+<div class='latitude cancer down'></div>
+<div class='latitude capricon up'></div>
+<div class='latitude capricon down'></div>
+</div>
+<script src='earth.js'></script>
+</body>
+</html>
