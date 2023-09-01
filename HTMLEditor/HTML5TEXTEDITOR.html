@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML5 Text Editor</title>
+        <style>
+            body{
+    padding: 2vh 2vw;
+    display: flex; flex-flow: column;
+    gap: 1vh; margin: 0;
+}
+*{
+    
+}
+/*projecbox*/
+#projectbox{
+    padding: 10px; font-size: 1.2em;
+    border: 2px solid green;
+    display: flex; gap: 5px;
+    flex-flow: column;
+    overflow-y: scroll;
+    margin-top: 28vh;
+}
+#projectbox>*{
+    border: 2px solid green;
+}
+#editor{
+    display: flex; height: 50vh;
+    flex-flow: row; font-weight: bold;
+}
+#editor>*{
+    margin: 10px; width: 100%;
+/*     height: 50%; */
+    border: 2px solid green;
+}
+
+#viewer{
+    height: -webkit-fill-available;
+/*     background: white; */
+}
+/* options */
+#options{
+    display: flex; align-items: center;
+    justify-content: center;
+/*     height: 30vh; */
+    border: 2px solid green;
+    position: fixed; width: 98.5vw;
+    background: white; top: 0; left: 0;
+}
+#options>*{
+    width: 50%;
+    text-align: center;
+    padding: 1%
+}
+#options h3{
+    border: 2px solid green;
+    text-align: left; padding: 10px;
+    margin: 0 0 5% 5%;
+}
+#o_file:nth-last-of-type(1){color: red}
+button, input, select{
+    box-sizing: border-box;
+    border: 4px outset green;
+    height: 5vh;
+    background: rgb(144 238 144 / 80%);
+}
+button:hover, select:hover{scale: 1.2;}
+button:active, select:active{
+    background: lightgreen;
+    border-style: inset
+}
+#o_file{
+    border-right: 4px double green;
+}
+#o_project{
+    a
+}
+#o_bold{font-weight: 900;}
+#o_italic{font-style: italic; font-family: serif}
+#o_underline{text-decoration: underline;}
+#o_strike{text-decoration: line-through}
+#o_overline{text-decoration: overline}
+{font-family: }
+/*for stats*/
+#stats{
+    background: green;
+    padding: 10px; color: white
+}
+#stats span{background: #a6f1a6; color: black; padding: 5px}
+
+@media screen and (max-width: 980px){
+    #editor{
+        flex-flow: column;
+    }
+    #editor>textarea{
+        height: 40%; width: -webkit-fill-available;
+        font-size: 1em;
+    }
+    button, select, input{
+        font-size: 3em; width: fit-content;
+        height: fit-content;
+        margin: 0 15px 10px 0; float: left
+    }
+    [type=color]{width: 100px; height: 90px}
+    #o_name{width: 100%}
+}</style>
+    </head>
+    <body>
+        <div id='options' command=3>
+            <div id='o_file'>
+                <h3>File options</h3>
+                <input type=file hidden id=o_file>
+                <button id='o_open'>open</button>
+                <button id='o_save'>save</button>
+                <input id='o_name' value='essay'>
+            </div>
+            <div id='o_edit'>
+                <h3>Edit</h3>
+                <button id='o_bold' command='bold'>B</button>
+                <button id='o_italic' command='italic'>I</button>
+                <button id='o_underline' command='underline'>U</button>
+                <button id='o_overline' command='styleWithCSS' value='text-decoration: overline'>O</button>
+                <button id='o_strike' command='strikeThrough'>S</button>
+                <button id='o_sub' command='subscript'>X<sub>2</sub></button>
+                <button id='o_super' command='superscript'>X<sup>2</sup></button>
+                <select id=o_font command='fontName'></select>
+                <input id='o_fsize' command='fontSize' min=1 max=40 type=number>
+                <input id='o_color' command='foreColor' type=color>
+                <input id='o_background' command='backColor' type=color>
+                <button id='o_undo' command='undo'><<<</button>
+                <button id='o_redo' command='redo'>>>></button>
+            </div>
+<!--             <div id='o_file'></div> -->
+        </div>
+        <div id=projectbox>
+            <div id='editor'>
+                <textarea placeholder=Styles id=style>
+#viewer{
+    background: white;
+    padding: 10px;
+}</textarea>
+                <textarea placeholder=Markup id=markup></textarea>
+                <style id=styleeffector></style></style>
+            </div>
+            <div id='viewer'></div>
+        </div><a download hidden id='save'></a>
+    <div id=stats>
+        Number of Characters: <span id=NoC></span>
+        Words written: <span id='WWr'></span>
+        Number of Paragraphs: <span id='NoP'></span>
+    </div>
+    </body>
+    <script id='funcs'></script>
+    <script>let make= (name='div')=>document.createElement(name),
+get=(id)=>document.getElementById(id),
+getE=(selector, value)=>document.querySelector(`[${selector}=${value}]`),
+getS=(query)=>document.querySelector(query),
+getAll=(query)=>[...document.querySelectorAll(query)];
+let identify=()=>getAll('[id]').forEach(i=>window[i.id]=i),
+    add=(what, to=document.body)=>to.appendChild(what),
+    bx = (who)=>who.getBoundingClientRect();
+        identify();
+let cute = (com, val)=>document.execCommand(com, false, val),
+    reader = new FileReader, D = new DOMParser;
+onkeyup=onkeydown=(event)=>{
+    onchange()||event.key=='s' && event.ctrlKey && event.preventDefault()||(localStorage.markup = markup.value, localStorage.style=style.value)
+};
+editor.onkeydown=editor.onkeyup=()=>{
+    return [(viewer.innerHTML = markup.value), (styleeffector.innerHTML=style.value)]
+};
+style.onkeydown=()=>{
+    let x = style.value.split(''), s = style.selectionStart;
+    if(event.key=='{'){
+        x[s] = '{\n    \n}';
+        style.value = x.join('')
+        style.setSelectionRange(s+6, s+6);
+        event.preventDefault()
+    }
+    if (event.key=='Enter' && !'}'.includes(style.value[s-1])){
+        x[s-1]+='\n    '
+        style.value = x.join('');
+        style.setSelectionRange(s+5, s+5);
+        event.preventDefault()
+    };
+}
+editor.onkeydown()
+viewer.contentEditable = true;
+
+viewer.spellcheck=!(markup.spellcheck = style.spellcheck=0)
+viewer.onchange=viewer.onkeydown=viewer.onkeyup=()=>{
+    event.stopPropagation();
+    onkeydown(event)
+    if(event.altKey&&event.key=='f'){
+        event.preventDefault();
+        cute('fontSize', o_fsize.value)
+    }
+    markup.value = viewer.innerHTML;
+}
+//options
+// for edition bold, italics, underline, etc; use document.execCommand()
+o_edit.onclick=()=>{
+    // event.stopPropagation();
+    let c = event.target,
+    com = c.getAttribute('command'); val = c.getAttribute('value');
+    if (!['BUTTON', 'INPUT'].includes(c.nodeName)||c.parentElement!=o_edit) return;
+    // if(['number', 'color'].includes(c.type)||c.nodeName=='SELECT') val = c.value;
+    cute(com, val);
+    viewer.onkeydown()
+}
+o_edit.oninput=()=>{
+    let com = event.target.getAttribute('command'), val = event.target.value;
+    cute(com, val/*+com=='fontSize'?'px':''*/);
+    viewer.onkeydown()
+}
+
+['Arial', 'Fantasy', 'Cursive', 'Serif', 'Sans serif'].forEach(f=>{
+    o_font.add(new Option(f))
+})
+
+//saving
+o_save.onclick=()=>{
+    let t = new Blob([...`${viewer.outerHTML+'\n'+styleeffector.outerHTML}`]);
+    reader.readAsDataURL(t);
+    reader.onload=()=>{
+        if (!forHTML && o_name.value.split('.').length==1) {o_name.value+='.txt'}
+        save.download = o_name.value+(forHTML?'.html':'');
+        save.href = reader.result;
+        save.click();
+    }
+}
+o_open.onclick=()=>{
+    o_file.click();
+}
+o_file.onchange=()=>{
+    let x = o_file.files[0];
+    if(!x.type.includes('text/')) return alert('No supported editor for '+x.type);
+    x.text().then(i=>{
+        dx = D.parseFromString(i, 'text/html');
+        markup.value = dx.body.innerHTML;
+        o_name.value = x.name.split('.html')[0];
+        editor.onkeydown();
+    })
+}
+onload=()=>{
+    editor.style.display = (forHTML = confirm('Use Editor to make HTML5 files?'))?'':'none';
+    markup.value=localStorage.markup;
+    style.value=localStorage.style!='undefined'?localStorage.style:style.value;
+    editor.onkeydown();
+    onchange()
+}
+onbeforeunload=()=>{
+    localStorage.markup=markup.value;
+    localStorage.style=style.value
+};
+//for stats
+onchange=()=>{
+    NoC.textContent = viewer.textContent.length;
+    WWr.textContent = viewer.textContent.split(' ').length;
+    NoP.textContent = viewer.querySelectorAll('p').length;
+}
+
+
+//May 15, 2023; goaty child born; 20: 37 make it nice so it can be used for phone
+
+// Earlier today I wanted to do Web Dev Website or DevD or DDev
+    </script>
+</html>
