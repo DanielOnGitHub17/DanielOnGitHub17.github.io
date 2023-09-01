@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>PI</title>
+        <style>
+            @import url(styles.css); @import url(pi.css); @import url(polygon.css); </style>
+    </head>
+    <body>
+        <nav>
+            <ul>
+                <li whose="madeByUser">User Defined</li>
+                <li whose="main">General</li>
+                <li whose="analyses">Analysis</li>
+            </ul>
+        </nav>
+        <hr>
+        <div id=container>
+            <div id="madeByUser" class="root">
+                <h2>User Defined Pi Makers</h2>
+                <form class="toRight">
+                    <label>Number of sides: <input type="number" required min="3" value=4 id="numberOfSides">;</label>
+                    <label>Length of side: <input type="number" max="200" id="lengthOfSide"></label>
+                    <button id=generatePiMaker>Generate PiMaker</button>
+                </form>
+                <div id="userMadePiMakers" class="piMakersContainer"></div>
+            </div>
+            <div id="main" class="root">
+                <h2>PiMakers for Pi analysis</h2>
+                <form class="toRight">
+                    <label for="generatePiMaker">Number of sides: </label>
+                    <label for="maxGon">Input the highest number of sides: </label>
+                    <input type="number" min="4" max="100" id="maxGon">
+                    <input type="number" min="4" max="100" id="maxGon">
+                    <input type="number" min="4" max="100" id="maxGon">
+                    <button id=generateMainPiMakers>Generate PiMakers</button>
+                </form>
+                <div id="mainPiMakers" class="piMakersContainer"></div>
+            </div>
+            <div id="analyses" class="root">
+                <table id="mainRatios">
+                    <tr>
+                        <th></th>
+                    </tr>
+                </table>
+                <p id="mainConclusions"></p>
+            </div>
+        </div>
+        <script src='../../funcs.js'></script>
+        <script src='vars.js'></script>
+        <script src='funcs.js'></script>
+        <script src='events.js'></script>
+        <!--         classes -->
+        <script src='Polygon.js'></script>
+        <script src='Triangle.js'></script>
+        <script src='Circle.js'></script>
+        <script src='PiMaker.js'></script>
+        <!--         end of classes -->
+        <script src='analysis.js'></script>
+        <script src='main.js'></script>
+    </body>
+</html>

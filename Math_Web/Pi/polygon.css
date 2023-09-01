@@ -1,0 +1,10 @@
+polygon{
+    fill: none;
+    stroke: black;
+    stroke-width: 1;
+}
+
+polygon:focus {stroke: blue;}
+circle{
+    fill: none; stroke: black; stroke-width: .3;
+}

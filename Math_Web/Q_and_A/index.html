@@ -1,0 +1,88 @@
+<!Doctype html>
+<html>
+    <head>
+        <title>Mathematics Q &A</title>
+        <style>
+            @import url(Math_Web.css); </style>
+    </head>
+    <body>
+        <nav id='nav'>
+            <ul>
+                <li id='quad' style='background: #558B2F;'>Quadratics</li>
+                <li id='simul' style='background: #7CB342;'>Simultaneous Equations</li>
+                <li id='cord' style='background: #9CCC65;'>Coordinate Geometry</li>
+                <li id='algr' style='background: #C5E1A5;'>Algebra</li>
+            </ul>
+        </nav>
+        <div id='container'>
+            <div id='time'>00:00</div>
+            <div id='hiS'>
+                Score: <span>0/0</span>
+            </div>
+            <form id='settings'>
+                <label>
+                    Name: <input placeholder='Your name' type='text' spellcheck='false' id='User'>
+                </label>
+                <label>
+                    Number of questions: 
+<input type='number' min='10' value='15' max='20' step='5' maxLength='2' id='N'>
+                </label>
+                <input id='submit' type='submit' value='start'>
+            </form>
+            <div id='question'>
+                <div id='text'>
+                    <span id='questionNo'>x. </span>
+                    xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx<br>xxxxxxxxxxxxxxxxx
+                </div>
+                <div id='options'>
+                    <label>
+                        <input type='radio' name='choice' class='wrong'>
+                        A. <span>xxxx</span>
+                    </label>
+                    <label>
+                        <input type='radio' name='choice' class='wrong'>
+                        B. <span>xxxx</span>
+                    </label>
+                    <label>
+                        <input type='radio' name='choice' class='wrong'>
+                        C. <span>xxxx</span>
+                    </label>
+                    <label>
+                        <input type='radio' name='choice' class='correct'>
+                        D. <span>xxxx</span>
+                    </label>
+                </div>
+                <div id='PAN'>
+                    <button id='prev'></button>
+                    <input type='submit' value='check answer' id='checkAnswer'>
+                    <button id='next' style="--s: '';"></button>
+                </div>
+            </div>
+        </div>
+        <div id='aids'>
+            <select id='shuffleCards'>
+                <option value='notes' style='background: #558b2f'>Note pad</option>
+                <option value='solve' style='background: #7cb342'>Solving Board</option>
+                <option value='calculator' style='background: #9ccc65'>Calculator</option>
+            </select>
+            <textarea id='notes' placeholder='NOTES' spellcheck=false></textarea>
+            <div id='solve'>
+                <div id='eraser'>💊</div>
+            </div>
+            <div id='calculator'>
+                <textarea spellcheck=false id='screen'></textarea>
+            </div>
+        </div>
+        <svg style='display: none;' id='draw' width='610' height='600' viewbox='0 0 610 600'>
+            <path id='write' d=''></path>
+        </svg>
+        <!--         <div id='not'>💊</div> -->
+        <div id='dot' style='display: none;'></div>
+        <script src='../../funcs.js'></script>
+        <script src='Topics.js'></script>
+        <script src='Math_Web.js'></script>
+        <script src='Helpers/Events.js'></script>
+        <script src='Helpers/Calculator.js'></script>
+        <script src='Helpers/SolveBoard.js'></script>
+    </body>
+</html>
