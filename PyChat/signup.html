@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<title>Py Chat sign up</title>
+<meta charset="utf-8">
+<style>
+@import url(styles.css);
+</style>
+</head>
+<body>
+<form id="signup" method="get" action="cgi-bin/signup.py">
+<fieldset>
+<legend>Sign up to access chat</legend>
+<div id='messageFromServer'></div>
+<ul type=none>
+<li><label for='phone'>Phone number: </label><input type="text" required name='phone' id='phone'/></li>
+<li><label for='password'>Password:</label><input type="password" required name="password" id="password"/></li>
+<li><label for='confirm'>Confirm password:</label><input type="password" required id="confirm"/></li>
+<li><label for="fullname">Full name:</label><input type="fullname" required name="fullname" id="fullname"/></li>
+</ul>
+<input type='submit' id='submitter' value=Register />
+<p>Already have an account? Tap to <a href='/'>Login</a></p>
+</fieldset>
+</form>
+<script src='funcs.js'></script>
+<script src='general.js'></script>
+<script src='signup.js'></script>
+<body>
+</html>

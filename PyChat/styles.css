@@ -1,0 +1,319 @@
+*{
+    font-family: calibri;
+    border-radius: .3em;
+    clear: both; list-style-type: none;
+}
+*:focus{
+    outline: none;
+}
+body{
+    display: flex;
+    justify-content: center;
+}
+form{
+    width: fit-content;
+}
+fieldset{
+    padding: 30px; border: 2px solid darkgray;
+    background: lightgreen;
+}
+li{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    gap: 10px;
+}
+label{
+    background: white;
+    width: fit-content;
+    display: block; padding: 5px 10px
+}
+input{
+    border: inset;
+}
+input:active, input:focus{
+    border: outset;
+}
+[type="submit"]{
+    padding: 7px 19px;
+    border: outset;
+    background: greenyellow;
+    border-radius: 0 1em 1em 0;
+    cursor: pointer;
+    font-size: 1em; transition: .2s;
+    display: block; text-align: right;
+    margin-left: auto;
+}
+[type="submit"]:focus{
+    color: white;
+}
+[type="submit"]:hover{
+    background: limegreen;
+    color: white;
+}
+[type="submit"]:active{
+    border: inset;
+}
+legend{
+    background: white;
+    padding: 7px 10px;
+    border: 2px solid darkgray;
+    text-align: center;
+    width: -webkit-fill-available;
+    font-size: 1.2em; letter-spacing: 1;
+    color: darkgreen;
+}
+a{
+    border: 1px groove darkgray;
+    padding: 5px 10px; background: white;
+    text-decoration: none;
+    color: darkgreen; transition: .3s
+}
+a:hover, a:focus{
+    text-decoration: underline;
+    text-decoration-line: underline;
+    text-decoration-thickness: .1em;
+    text-decoration-skip-ink: auto;
+    text-decoration-style: dashed;
+    background: green;
+    color: white;
+}
+a:active{
+    background: darkgreen;
+}
+
+
+/* loading */
+#loading, #loading:before{
+    width: 80px;
+    height: 80px;
+    border: none;
+    position: fixed;
+    top: calc(50% - 40px);
+    left: calc(50% - 40px); z-index: 199;
+}
+#loading:before{
+    content: ''; width: 1000%; height: 1000%;
+    top: 0; left: 0; border-radius: 0;
+    background: rgb(0 0 0 / 60%);
+}
+#loading>div{
+    width: 20px; height: 20px; border: none; background: white;
+    top: 0; left: calc(50% - 10px);var(--x); position: absolute;
+    border-radius: 10em;
+animation: blink 1s cubic-bezier(0, 0, 1, -0.12) infinite;
+    opacity: 0; z-index: 200;
+}
+@-webkit-keyframes blink{
+    0%{opacity: 1}
+    50%{opacity: 0}
+}
+#c0{transform: translate(0px, 0px);}
+#c1{transform: translate(20px, 11px);}
+#c2{transform: translate(30px, 30px)}
+#c3{transform: translate(20px, 50px)}
+#c4{transform: translate(0px, 60px)}
+#c5{transform: translate(-20px, 50px)}
+#c6{transform: translate(-30px, 30px)}
+#c7{transform: translate(-20px, 11px);}
+/* end loading */
+
+/* end general */
+
+/* message from server */
+#messageFromServer{
+    color: red;
+    border: 1px solid darkgreen;
+    overflow-wrap: anywhere;
+    padding: 5px;
+    background: white; border-radius: inherit;
+    transform: translateY(-15px);
+    text-align: center;
+}
+
+/* chat and more */
+body{
+    margin: 20px;
+}
+#chatAndMore{
+    display: flex;
+    /* width: 90vw; */
+    border: 2px solid darkgray;
+    padding: 10px;
+    width: 100%;
+    height: 90vh;
+    gap: 0px; flex-wrap: nowrap;
+    justify-content: center;
+}
+#chatAndMore>*{
+    border: inherit;
+    width: 100%;
+    padding: 10px;
+}
+#chatBox{
+    display: flex;
+    width: 100%;
+    flex-flow: column;
+    gap: 10px;
+}
+#controls{
+    border: 2px solid darkgray;
+    display: flex; border-radius: 2em;
+    align-items: center;
+    padding: 0 5px; height: 10vh;
+}
+#messagar{
+    width: 100%;
+    height: 3em;
+    overflow-y: scroll;
+    line-break: anywhere;
+    border-radius: 0;
+    padding: 5px;
+    box-sizing: border-box;
+    border-top: 5px groove lightgreen;
+}
+#controls button{
+    padding: 7px;
+    background: white;
+    font-size: 1.2em;
+    border: none;
+    border: thin solid darkgray;
+    border-radius: 3em;
+    box-sizing: border-box;
+    width: 9vw; height: 7vh
+}
+#controls button:hover, #controls button:focus{
+    background: lightgreen
+}
+#controls button:active{
+    background: green;
+}
+button{
+    cursor: pointer;
+}
+#imagar{
+    border-radius: 5em 0 0 5em;
+    width: fit-content;
+}
+#sendar{
+    border-radius: 5em;
+}
+
+/* more styles */
+
+#friendsDetails {
+    height: 10vh;
+    border: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact{
+    width: fit-content
+}
+.contact img{
+    width: 50px; height: 50px;
+    border: 2px groove lightgreen;
+    padding: 10px;
+}
+.contact span{
+    color: gray; margin-left: 10px; */
+}
+.contact #friendPhone{
+    clear: 
+}
+
+#chats {
+    height: 100%;
+    border: inherit;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    padding: 10px;
+}
+#chats>div{
+    clear: both;
+    float: right;
+    border: solid gray;
+    border-width: thin;
+    border-radius: 1em;
+    background: lightgreen;
+}
+.messageBox{
+    max-width: 40%;
+    overflow-wrap: anywhere;
+    padding: 10px;
+    cursor: pointer;
+}
+#chats>.sent{
+    border-top-right-radius: 0;
+}
+#chats>.received{
+    float: left;
+    border-top-left-radius: 0;
+    background: #d3d3d3;
+}
+#chats>.messageBox[selected=true]{
+    background: darkgreen;
+    color: white;
+    filter: drop-shadow(2px 4px 6px green);
+}
+
+/*for more*/
+#chatAndMore #more{
+    width: 30px;
+    transition: width .2s;
+    overflow: hidden;
+    flex-flow: column;
+    display: flex;
+}
+#more>*{
+    margin-left: 40px;
+}
+#more #showmore{
+    float: left;
+    margin-left: 0;
+    width: 30px;
+    font-size: xx-large;
+    background: white;
+    border: none
+}
+[type=radio], [type=checkbox]{
+    transform: scale(1.5);
+};
+
+
+ul#friendsList {}
+
+ul#friendsList {
+    height: 50vh;
+    border:  inherit;
+    width: fit-content;
+    overflow: hidden scroll;
+    padding: 10px 0 10px 10px;
+}
+
+#friendsList li {
+    display: flex;
+    gap: 7px;
+    border: 4px groove lightgreen;
+    padding: 4px;
+    overflow: scroll hidden;
+    width: 20vw;
+}
+
+[online] {
+    height: 10px;
+    width: 10px;
+    background: lime;
+    border: none;
+}
+
+[online=false] {
+    background: white;
+}
+#addFriend{
+    width: 50px;
+    font-size: 2em; height: 50px;
+/*     align-self: flex-end; */
+    box-sizing: border-box;
+}
