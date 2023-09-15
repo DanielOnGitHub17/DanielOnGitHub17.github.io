@@ -1,0 +1,118 @@
+body{
+    padding-top: 100px
+}
+form * {
+    border-radius: 5;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*     border: 1px solid; height: fit-content; */
+}
+fieldset{
+    display: flex; flex-flow: column;
+    
+}
+legend {
+    font-size: 20px;
+    border: 2px solid chocolate;
+    border-radius: 5px;
+    height: 2em;
+    text-align: center;
+    width: 20em;
+    background: white;
+    box-sizing: border-box;
+    padding-top: 5px;
+}
+
+#Nuser {
+    padding: 40;
+    width: fit-content;
+    border-radius: 5px;
+    border: 2px solid chocolate
+}
+
+#Nuser input {
+    --display: block;
+    padding: 5px;
+    margin: 4px;
+    border-radius: 5px;
+    border-color: mintcream;
+    height: 25px; transition: background .2s;
+}
+
+
+#Nuser label {
+    width: 120px;
+    margin-left: 30px;
+    display: inline-block;
+    background: white;
+    padding: 5;
+    border-radius: 0;
+    /*     text-align: center; */
+}
+
+#Nuser input[value='']:after {
+    content: '🛶🛶🛶Please fill out this field';
+    position: absolute;
+    transform: translateX(160px);
+    color: red
+}
+
+#nuser [type=submit], #nuser a {
+    background: white;
+    width: 10em;
+    padding: 5px 0;
+    box-sizing: content-box;
+}
+
+#nuser p {
+    line-height: 1.5em;
+    height: 50px;
+    text-align: center
+}
+
+#nuser a {
+    width: fit-content;
+    display: initial;
+    border: 2px dotted;
+    padding: 10; color: brown;
+    transition: background .2s;
+    border-radius: .5em; text-decoration: none;
+}
+
+#nuser a[href='../'] {
+    position: absolute;
+    top: 10%;
+    left: 80%
+}
+
+#nuser a:hover, #nuser [type=submit]:hover, #nuser a:focus, #nuser [type=submit]:focus {
+    background: chocolate;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+#nuser input[type=submit]:focus, #nuser a:focus{
+    background: brown;
+    outline: none;
+}
+input:focus, input:active{
+    outline: none;
+}
+
+[type=submit][disabled] {
+    color: gray;
+    cursor: not-allowed
+}
+
+#nuser [type=submit][disabled]:hover {
+    background: white
+}
+#msg{
+    background: white;
+    padding: 10px;
+    width: fit-content;
+}
