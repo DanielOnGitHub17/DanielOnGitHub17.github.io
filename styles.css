@@ -1,31 +1,17 @@
-nav ul{
+body{
   display: flex;
-  margin: 30px;
   justify-content: center;
-  list-style-type: none;
-  gap: 1em;
-  flex-wrap: wrap;
+  align-items: center;
 }
-nav{
-  border: 4px double green;
+
+nav ul{
+  display: flex; flex-flow: column;
+  padding: 10px;
+  border-radius: 0.1em;
 }
-nav a{
-  padding: 20px;
-  background: green;
-  border-radius: 2em;
-  text-decoration: none;
-  color: white;
-  display: block;
-  transition: 0.2s;
+nav ul li:nth-child(2n-1){
+  padding: 5px; background: ghostwhite;
 }
-nav a:hover{
-  background: limegreen;
-  color: gray;
-}
-nav a:active{
-  background: darkgreen;
-  color: white;
-}
-nav a.naval{
-  opacity: 0.6;
+nav ul li:nth-child(2n-1){
+  padding: 5px; background: gray;
 }
