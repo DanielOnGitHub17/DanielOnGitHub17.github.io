@@ -8,6 +8,7 @@ nav ul{
   display: flex; flex-flow: column;
   padding: 10px;
   border-radius: 0.1em;
+  font: 2em math
 }
 nav ul li:nth-child(2n-1){
   padding: 5px; background: ghostwhite;
