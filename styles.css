@@ -19,5 +19,5 @@ nav ul li:nth-child(2n){
   padding: 5px; background: gray;
 }
 nav a{
-  text-decoration: none;
+  text-decoration: none; color: blue;
 }
