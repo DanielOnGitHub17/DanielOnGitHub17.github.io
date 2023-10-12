@@ -1,23 +1,36 @@
 body{
+  flex-flow: column;
+  font: 2em math;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
 nav ul{
   display: flex; flex-flow: column;
   padding: 10px;
-  border-radius: 0.2em;
-  font: 2em math;
+  border-radius: 0.4em;
   list-style-type: none;
   border: 2px solid gray;
+  width: fit-content;
 }
-nav ul li:nth-child(2n-1){
-  padding: 5px; background: ghostwhite;
+nav ul li{
+  padding: 5px;
 }
-nav ul li:nth-child(2n){
-  padding: 5px; background: gray;
+nav ul li:nth-child(2n-1) a{
+  background: whitesmoke; color: gray;
+}
+nav ul li:nth-child(2n) a{
+  background: gray; color: whitesmoke;
 }
 nav a{
-  text-decoration: none; color: blue;
+  text-decoration: none; display: block;
+  border-radius: 0.3em; transition: 0.2s;
+  border: thin solid gray;
+  padding: .1em .3em;
+}
+nav ul li a:hover{
+  filter: invert(1);
+}
+nav ul li a:active{
+  filter: none; color: darkblue;
 }
