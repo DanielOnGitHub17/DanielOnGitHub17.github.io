@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML5 Text Editor</title>
+        <style>
+            @import url(styles.css)
+        </style>
+    </head>
+    <body>
+        <div id='options' command=3>
+            <div id='o_file'>
+                <h3>File options</h3>
+                <input type=file hidden id=o_file>
+                <button id='o_open'>open</button>
+                <button id='o_save'>save</button>
+                <input id='o_name' value='essay'>
+            </div>
+            <div id='o_edit'>
+                <h3>Edit</h3>
+                <button id='o_bold' command='bold'>B</button>
+                <button id='o_italic' command='italic'>I</button>
+                <button id='o_underline' command='underline'>U</button>
+                <button id='o_overline' command='styleWithCSS' value='text-decoration: overline'>O</button>
+                <button id='o_strike' command='strikeThrough'>S</button>
+                <button id='o_sub' command='subscript'>X<sub>2</sub></button>
+                <button id='o_super' command='superscript'>X<sup>2</sup></button>
+                <select id=fontFamily></select><button id='o_fontFamily' command='fontName'>A</button><button disabled class=space></button>
+                <input id='fontSize' value=5 min=1 max=7 type=number><button id='o_fontSize' command='fontSize'><font>A</font></button><button disabled class=space></button>
+<!--                 learn useCSS or stylewithcss so that you can do font size well -->
+                <input id='color' type=color><button id='o_color' command='foreColor'>A</button><button disabled class=space></button>
+                <input id='background' type=color><button id='o_background' command='backColor'>A</button><button disabled class=space></button>
+                <button id='o_undo' command='undo' style='font-family: cursive'><--</button>
+                <button id='o_redo' command='redo' style='font-family: cursive'>--></button>
+            </div>
+        </div>
+        <div id=projectbox>
+            <div id='editor'>
+                <div>
+                    <h3>Styles</h3>
+                    <textarea placeholder=Styles id=style>
+#viewer{
+    background: white;
+    padding: 10px;
+}</textarea></div>
+                <div><h3>Markup</h3><textarea placeholder=Markup id=markup></textarea></div>
+                <style id=styleeffector></style></style>
+            </div>
+            <div id='viewer'></div>
+        </div><a download hidden id='save'></a>
+    <div id=stats>
+        Number of Characters: <span id=NoC></span>
+        Words written: <span id='WWr'></span>
+        Number of Paragraphs: <span id='NoP'></span>
+        Read aloud selected<button id=ras>Read</button>
+    </div>
+    </body>
+    <script src='script.js'></script>
+</html>
