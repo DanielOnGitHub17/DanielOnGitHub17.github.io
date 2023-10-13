@@ -42,7 +42,7 @@ startbutton.onclick=()=>{
             time ='evening'
         }else if(hours>11){
             time='afternoon'
-        }else if(hours>0){
+        }else if(hours>=0){
             time='morning'
         }
         question = new SpeechSynthesisUtterance(`
