@@ -10,12 +10,25 @@
         <h1>Phone Patterns</h1>
         <article id=about>
             <p>
-                The Idea about this whole website is to simulate unlock patterns for phones, a step toward hacking phone patterns...
+                The idea about this page is to simulate unlock patterns for phones, a step toward hacking phone patterns...
                 <br>Although the interface does not exactly provide the simplicity of drawing patterns on phones,
-                it does try its best to imitate it, making it compatible for both
-                mobile and PC devices.<br>
+                it does try its best to imitate it, making it compatible for both mobile and PC devices.<br>
                 Future updates to the API may make it more similar to the generic mobile device pattern.
+                <a href="#help">Interface Help</a>
             </p>
+        </article>
+        <h2>
+            Your Patterns<button id=uPatternAdd>+</button>
+            <button class=showorhide id='SOHU'>\/</button>
+        </h2>
+        <div id=userDefinedPatterns></div>
+        <h2>All Patterns
+<!--             <button id=aPatternAdd>+</button> -->
+<!--             <input type='number' min=4 max=9 value=9 id='pointsValue'> -->
+            <button class=showorhide id='SOHA'>\/</button>
+        </h2>
+        <div id=allPatterns></div>
+        <article id="help">
             <h3>Follow this instructions to use the interface easily</h3>
             <ol id=howto>
                 <li>Click the plus button on the "Your Patterns" section to add a new pattern.</li>
@@ -42,17 +55,6 @@
                 <li>The "D" means Delete; click it to remove the pattern</li>
             </ol>
         </article>
-        <h2>
-            Your Patterns<button id=uPatternAdd>+</button>
-            <button class=showorhide id='SOHU'>\/</button>
-        </h2>
-        <div id=userDefinedPatterns></div>
-        <h2>All Patterns
-<!--             <button id=aPatternAdd>+</button> -->
-<!--             <input type='number' min=4 max=9 value=9 id='pointsValue'> -->
-            <button class=showorhide id='SOHA'>\/</button>
-        </h2>
-        <div id=allPatterns></div>
         <svg id=baseSVG>
             <circle id=baseCircle></circle>
             <path id=baseLine></path>
