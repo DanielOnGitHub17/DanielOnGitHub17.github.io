@@ -35,3 +35,15 @@ nav ul li a:active{
   filter: none; color: darkblue;
 }
 /* paragraphs */
+p{
+  text-align: center;
+  border: 2px solid;
+  padding: 10px;
+  width: 600px;
+  background: whitesmoke;
+  color: grey;
+  border-radius: .4em;
+}
+p a{
+  color: black;
+}
