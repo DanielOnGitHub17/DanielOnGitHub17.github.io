@@ -29,6 +29,10 @@ body>div>*:not(p){
 #questionslist{
     border: none;
 }
+#after{
+    width: -webkit-fill-available; border: 1px solid blue;
+    border-radius: 0;
+}
 #setup{display: nne}
 li, label{
     border: thin solid blue;
@@ -142,7 +146,7 @@ th{color: darkblue; text-align: -webkit-auto;}
 }
 #errors{color: red}
 #refresher{width: fit-content; text-transform: uppercase}
-@meda screen and (max-width: 980px){
+@media screen and (max-width: 980px){
     body{
         font-size: 2em
     }
