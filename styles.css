@@ -3,6 +3,7 @@ body{
   font: 2em math;
   display: flex;
   align-items: center;
+  background: #c1e2c0
 }
 
 nav ul{
@@ -10,29 +11,31 @@ nav ul{
   padding: 10px;
   border-radius: 0.4em;
   list-style-type: none;
-  border: 2px solid gray;
+  border: 2px solid darkgreen;
   width: fit-content;
 }
 nav ul li{
   padding: 5px;
 }
 nav ul li:nth-child(2n-1) a{
-  background: whitesmoke; color: gray;
+  background: white; color: darkgreen;
 }
 nav ul li:nth-child(2n) a{
-  background: gray; color: whitesmoke;
+  background: green; color: white;
 }
 nav a{
   text-decoration: none; display: block;
   border-radius: 0.3em; transition: 0.2s;
-  border: thin solid gray;
+  border: thin solid darkgreen;
   padding: .1em .3em;
 }
 nav ul li a:hover{
-  filter: invert(1);
+  filter: contrast(3);
+  scale: 1.2;
+  border: 3px solid black
 }
 nav ul li a:active{
-  filter: none; color: darkblue;
+  filter: none; color: black;
 }
 /* paragraphs */
 p{
@@ -40,11 +43,20 @@ p{
   border: 2px solid;
   padding: 10px;
   width: 600px;
-  background: whitesmoke;
-  color: grey;
+  background: white;
+  color: darkgreen;
   border-radius: .4em;
 }
-p a{
+a{
+  color: lightgreen;
+  text-decoration: none;
+  transition: 0.2s;
+  border-radius: inherit;
+}
+a:hover{
+  padding: 10px; background: green;
+}
+a:active{
+  background: none;
   color: black;
-  text-decoration: dashed;
 }
