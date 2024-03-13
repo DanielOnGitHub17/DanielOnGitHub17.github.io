@@ -180,7 +180,8 @@ class Matrix {
             ans.push(n);
         }); return ans;
 
-    }; get rank() { };
+    };
+    get rank() { };
     cofactorset(array, x, y) {
         let ans = copy(array);
         delete ans.splice(x, 1);;
@@ -210,7 +211,11 @@ class Matrix {
         //except I want to do a step by step solving process (how I got it feature)
         return ans;
     }
-    get transpose() { return this.tran() }
+
+    get transpose() {
+        return this.tran()
+    }
+
     get minor() {
         let ans = [];
         for (let i = 0; i < this.dim.x; i++) {
@@ -226,7 +231,8 @@ class Matrix {
             for (let j = 0; j < this.dim.y; j++) {
                 ans[i][j] *= ((-1) ** (i + j))
             }
-        }; return ans;
+        };
+        return ans;
     };
     get adjoint() { return this.tran(this.cofactor) };
     get inverse() { return this.scale(1 / this.det, this.adjoint) }
