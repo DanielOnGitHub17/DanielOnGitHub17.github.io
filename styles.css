@@ -67,7 +67,7 @@ div>p{
   box-sizing: border-box;
   border-radius: .5em;
   font-size: 1em;
-  text-align: justify;
+  text-align: left;
 }
 
 div>p>span, div>p>a{
