@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Internships Tracker</title>    
+    </head>
+    <style>
+        *:not(input, td){
+            border-radius: .5em;
+        }
+        body{
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            gap: 15px
+        }
+        a{
+            color: blue;
+            text-decoration: none;
+        }
+        a:hover{
+            color: darkblue;
+        }
+        input{
+            padding: 3px;
+        }
+        [type=submit]{
+            background: blue;
+            color: white;
+            cursor: pointer;
+            border: none;
+            padding: 10px;
+            
+        }
+        [type=submit]:hover{
+            background: darkblue;
+            color: white;
+            border: none;
+            
+        }
+        h2{color: blue}
+        table, form{
+            padding: 10px;
+            border: 2px solid blue;
+            display: flex;
+            flex-flow: column;
+        }
+        form{
+            border-width: 1px;
+            flex-flow: row;
+        }
+        tr{
+            margin: 5px;
+        }
+        th, td{
+            border: 1px solid;
+            padding: 10px;
+            overflow-x: scroll;
+            border-radius: .2em;
+            
+        }
+        tr td{
+            text-align: left;
+            width: 200px;
+        }
+        tr th:first-child, tr td:first-child{
+            width: 500px;
+        }
+    </style>
+    <body>
+        <h2>Internships Tracker Daniel Enesi</h2>
+        <table id="internships">
+            <tr>
+                <th>Name</th>
+                <th>Date Applied</th>
+                <th>Status</th>
+            </tr>
+        </table>
+        <!-- td on dblclick will have prompt to change status. -->
+        <form method="POST">
+            <input name="link" placeholder="Link" required>
+            <input name="name" placeholder="Name" required>
+            <input name="date" placeholder="Date" type="date" required>
+            <input name="status" placeholder="Status" required>
+            <input type="submit" value="add">
+        </form>
+        <script>
+            class InternshipApp {
+                constructor(position, link, name, dateApplied=new Date, status="applied"){
+                    internshipObjects.push(this)
+                    this.position = position;
+                    this.name = name.link(link);
+                    dateApplied = new Date(dateApplied);
+                    this.dateApplied = `<time datetime=${dateApplied.toISOString}>
+                    ${dateApplied.toDateString()}</time>`
+                    Object.defineProperties(this, {
+                        status: {
+                            get: ()=>status
+                            , set: (x)=>{
+                                status = x;
+                                InternshipApp.internshipApplications[this.position][3] = status;
+                                InternshipApp.persist()
+                            }
+                        }
+                    })
+                    this.build();
+                }
+                
+                build(){
+                    this.container = events.internshipsTable.insertRow();
+                    this.container.internship = this;
+                    for (let i in InternshipApp.args){
+                        this.container.insertCell().innerHTML = this[InternshipApp.args[i]];
+                    }
+                }
+                static persist(){
+                    InternshipApp.internshipApplications.sort(i=>i[2]) // sort them by date applied
+                    localStorage.myInternshipApplications = JSON.stringify(InternshipApp.internshipApplications);
+                    location.reload()
+                }
+                static args = ["name", "dateApplied", "status"];
+                static internshipApplications = localStorage.myInternshipApplications?
+                    JSON.parse(localStorage.myInternshipApplications):[];
+                
+                static buildPage(){
+                    let apps = InternshipApp.internshipApplications
+                    for (let i in apps){
+                        new InternshipApp(+i, ...apps[i])
+                    }
+                } 
+            }
+
+            class Events {
+                constructor() {
+                    this.internshipsTable = document.querySelector("table");
+                    this.add = document.querySelector("[type=submit]");
+                    this.internshipsTable.addEventListener("dblclick", (event)=>{
+                        event.stopPropagation()
+                        let target = event.target
+                        if ((target.tagName == "TD") && !target.childElementCount && !target.canEdit){
+                            target.contentEditable = true;
+                            let initial = target.textContent;
+                            target.canEdit = true;
+                            target.onblur = (eventIn) =>{
+                                console.log(2)
+                                if (eventIn.target.textContent != initial){
+                                    target.canEdit = false;
+                                    eventIn.target.parentElement.internship.status = (eventIn.target.textContent);
+                                }
+                            }
+                        }
+                        
+                    })
+                    
+                    document.forms[0].addEventListener("submit", ()=>{
+                        event.preventDefault()
+                        let form = new FormData(this.add.form)
+                        InternshipApp.internshipApplications.push([...form].map(input=>input[1]))
+                        InternshipApp.persist()
+                        
+                    })
+                }
+            }
+            let events = new Events
+            , internshipObjects = []
+            InternshipApp.buildPage()
+
+            function animateSVG() {
+                let svg = new Image();
+                document.body.append(svg);
+                let file = 0,
+                I = setInterval(()=>{
+                    svg.src=`file:///C:/Users/User/OneDrive/Pictures/github/svg${++file}.svg`;
+                    if (file >= 46) {
+                        clearInterval(I);
+                    }
+                }, 2000);
+            }
+
+            </script>
+    </body>
+</html>
