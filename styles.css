@@ -1,14 +1,15 @@
 body{
   flex-flow: column;
-  font: 1.5em math;
+  font: 1.3em math;
   display: flex;
   /* align-items: center; */
 }
 h1{
-  margin: 0;
+  margin: 3px;
   padding: 0;
 }
 *{
+  /* margin: 0; */
   --color: rgba(0, 100, 0, 0.2);
 }
 nav ul{
@@ -38,18 +39,52 @@ nav a{
 nav ul li a:hover{
   filter: contrast(3);
   scale: 1.2;
-  border: 3px solid rgba(0, 0, 0, 0.6);
+  border: 3px solid green;
 }
 nav ul li a:active{
   filter: none;
 }
 /* paragraphs */
-p{
+p, div{
   text-align: left;
-  padding: 10px;
-  /* width: 600px; */
-  border-radius: .4em;
+  padding: 7px;
+  font-size: .9em;
+  margin: 5px;
 }
+div{
+  --border: thin solid var(--color);
+  /* border-top: var(--border); */
+  margin-top: 0;
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+}
+
+div>p{
+  border: var(--border);
+  width: 600px; padding: 25px;
+  box-sizing: border-box;
+  border-radius: .5em;
+  font-size: 1em;
+}
+
+div>p>span, div>p>a{
+  display: block;
+  font-weight: bold;
+  border-bottom: inherit;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  box-sizing: content-box;
+}
+div>p>a{
+  border: none;
+  margin-top: 5px;
+}
+
+h3{
+  margin: 5px;
+}
+
 a{
   color: lightgreen;
   text-decoration: none;
@@ -57,7 +92,7 @@ a{
   border-radius: inherit;
 }
 a:hover{
-  padding: 10px; background: green;
+  padding: 10px; background: rgba(0, 128, 0, 0.605);
 }
 a:active{
   background: none;
