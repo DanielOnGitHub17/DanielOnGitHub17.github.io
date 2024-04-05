@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>Create Account</title>
+        <meta charset="utf-8">
+        <style>
+            @import url(../dzip.css);
+            @import url(reg.css); 
+        </style>
+    </head>
+    <body>
+        <form method='post' action='../cgi-bin/reg.py'>
+            <fieldset id='Nuser'>
+                <legend>Create A Zip Web Account</legend>
+                <div id='msg'></div>
+                <ul type=none>
+                    <li>
+                        <label for='UN'>User Name: </label>
+                        <input type='text' name='username' id='UN'/>
+                    </li>
+                    <li>
+                        <label for='NP'>New Password: </label>
+                        <input type='password' name='password' id='NP'/>
+                    </li>
+                    <li>
+                        <label for='CP'>Confirm Password: </label>
+                        <input type='password' name='password' id='CP'/>
+                    </li>
+                    <!-- <li><label for='PP'>Upload Profile Picture: </label><input type='file' name='passport' id='PP'/></li> -->
+                </ul>
+                <input type='submit' value='Create Account'>
+                <a href='../'>Home Page</a>
+                <p>
+                    Already have an account? tap to <a href='../login/'>Sign in</a>
+                </p>
+            </fieldset>
+        </form>
+        <script src='../dZip.js'></script>
+        <script src='reg.js'></script>
+        <body>
+</html>
