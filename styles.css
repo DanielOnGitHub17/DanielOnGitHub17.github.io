@@ -99,7 +99,7 @@ a:active{
   background: none;
   color: black;
 }
-p>a, h1>a{
+div>p>a, h1>a{
     float: right;
 }
 [href="#top"]{
@@ -108,4 +108,10 @@ p>a, h1>a{
   width: 50px;
   top: 10%;
   letter-spacing: -2px;
+}
+
+@media screen and (min-width: 1000px) {
+  body>p{
+    width: 800px;
+  }
 }
