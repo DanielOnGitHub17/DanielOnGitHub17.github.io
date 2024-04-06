@@ -10,6 +10,7 @@ h1{
   font-size: xx-large
 }
 *{
+  clear: both;
   /* margin: 0; */
   --color: rgba(0, 100, 0, 0.2);
 }
@@ -101,16 +102,25 @@ a:active{
 }
 div>p>a, h1>a{
     float: right;
+    padding: 10px;
 }
 [href="#top"]{
   position: fixed;
-  left: calc(100vw - 35px);
+  left: calc(100vw - 50px);
   width: 50px;
-  top: 10%;
-  letter-spacing: -2px;
+  bottom: 10%;
+  letter-spacing: -1px;
+  
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (max-width: 700px) {
+  body{
+    font-size: 1.15em;
+    word-spacing: .1em;
+    line-height: 1.2em;
+  }
+}
+@media screen and (min-width: 700px) {
   body>p{
     width: 800px;
   }
