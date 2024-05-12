@@ -2,7 +2,6 @@ const essays = [
     // title, src
     ["Happiness in a small room", "coding"]
     , ["Wealth in Poverty, the Christmas Irony", "christmas"]
-    , ["Statutes over Statues: Destroying Racial Injustice", "erace"]
     , ["Giants of Africa", "nigeria_n"]
 ]
 
