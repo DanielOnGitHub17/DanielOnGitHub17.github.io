@@ -219,7 +219,7 @@ function randBtw(a, b){
 let choice = (array)=>array[randBtw(0, array.length)]
   , jsonStr = (obj)=>JSON.stringify(obj)
   , jsonObj = (str)=>JSON.parse(str)
-  , copy = (obj)=>jsonObj(jsonStr(obj))
+  , copyObj = (obj)=>jsonObj(jsonStr(obj))
   , remove = (what, from) => from.splice(from.indexOf(what), 1)
   , local = (item, value)=>value ? localStorage.setItem(item, value) : localStorage[item];
 
