@@ -220,6 +220,8 @@ let choice = (array)=>array[randBtw(0, array.length)]
   , jsonStr = (obj)=>JSON.stringify(obj)
   , jsonObj = (str)=>JSON.parse(str)
   , copyObj = (obj)=>jsonObj(jsonStr(obj))
+  , logTurn = (obj) => (console.log(obj), obj)
+  , transfer = (object, from, to) => to.push(from.splice(from.indexOf(object), 1)[0])
   , remove = (what, from) => from.splice(from.indexOf(what), 1)
   , local = (item, value)=>value ? localStorage.setItem(item, value) : localStorage[item];
 
@@ -294,7 +296,7 @@ atan=(y, x=1)=>Math.atan2(y, x)*(180/Math.PI);
 function setSize(sprite, size, _='%'){
     sprite.style.width = size.x+_; sprite.style.height = size.y+_;
 }
-//Holy Spirit thank you for showing me 2 Nov, 2022
+
 function handleInputsImproved(player){
     addEventListener('keydown', event=>{
         key = event.key;
@@ -321,7 +323,6 @@ function handleInputsImproved(player){
        }
     })
 }
-//end Holy Spirit thank you for showing me 2 Nov, 2022
 
 function modeDif(){
     let mode, difficulty, level;
