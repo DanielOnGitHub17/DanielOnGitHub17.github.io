@@ -256,12 +256,7 @@ function getVoice(name){
 function isPhone(){
   return navigator.userAgentData.mobile;
 }
-  //did it for MEMORY game April 15 2023; 00:00
-// function count(value, array){
-//     ret = 0;
-//     array.forEach(i=>i==value&&ret++)
-    //use filter.length instead
-// }
+
 //start math
 function randP1(){
     n = Math.random();
@@ -271,12 +266,7 @@ function randP1(){
 function random(n){
     return parseInt(n*Math.random())
 }
-function randBtw(x=0, y=0, prec=0){
-    let n = `${(y-x+1)*Math.random()+x}`;
-    let s = n.split('.'),
-    N = s[0]+s[1].slice(0, prec)
-    return Number(N)
-}
+
 function sin(deg){
     deg = deg*Math.PI/180;
     return Math.sin(deg);
