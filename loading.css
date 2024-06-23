@@ -1,0 +1,52 @@
+/* LOADING */
+#LOADING, #LOADING:before{
+    width: 80px;
+    height: 80px;
+    border: none;
+    position: fixed;
+    top: calc(50vh - 40px);
+    left: calc(50vw - 40px);
+    z-index: 20;
+    margin: 0;
+}
+#LOADING:before{
+    content: var(--content);
+    font-size: 0.7em;
+    text-align: center;
+    padding-top: 50%;
+    color: white;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    background: rgb(0 0 0 / 60%);
+}
+#LOADING>div{
+    width: 16px;
+    height: 16px;
+    border-radius: 32px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 10px);
+    opacity: 0;
+    z-index: 21;
+    animation: blink 0.8s cubic-bezier(0, 0, 1, -0.12) infinite;
+}
+@keyframes blink{
+    0%{opacity: 1}
+    50%{opacity: 0}
+}
+#c0{transform: translate(0px, 0px);}
+#c1{transform: translate(20px, 11px);}
+#c2{transform: translate(30px, 30px)}
+#c3{transform: translate(20px, 50px)}
+#c4{transform: translate(0px, 60px)}
+#c5{transform: translate(-20px, 50px)}
+#c6{transform: translate(-30px, 30px)}
+#c7{transform: translate(-20px, 11px);}
+/* end LOADING */

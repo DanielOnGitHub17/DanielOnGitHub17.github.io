@@ -203,7 +203,7 @@ function loader(){
       let c;
       (c = make()).id = 'c'+n;
       c.style.animationDelay = n/N+'s';
-      // use other numbers appart from .1 to see effects;
+      // use other numbers apart from .1 to see effects;
       // will have to change animation-duration and dimensions too
       loading.append(c);
   };
