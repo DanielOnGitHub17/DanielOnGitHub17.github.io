@@ -28,7 +28,7 @@ nav ul li{
 nav ul li:nth-child(2n-1) a{
   background: white; color: darkgreen;
 }
-nav ul li:nth-child(2n) a{
+nav ul li:nth-child(2n) a, #EMAIL_FORM [type="submit"]{
   background: rgba(0, 128, 0, 0.7); color: white;
 }
 nav a{
@@ -119,6 +119,49 @@ article>iframe{
   height: 100vh;
   width: 90%;
   border: 1px solid rgba(0, 128, 0, 0.2);
+}
+
+/* For email form */
+#EMAIL_FORM>h4{
+  margin: 0;
+}
+#EMAIL_FORM>ul{
+  padding: 0;
+  margin: 0;
+}
+#EMAIL_FORM>p.failure{
+  color: red;
+}
+#EMAIL_FORM>p.success{
+  color: green;
+}
+#EMAIL_FORM li{
+  display: flex;
+  flex-flow: column;
+  width: fit-content;
+  padding: 4px;
+}
+
+#EMAIL_FORM input, #EMAIL_FORM textarea{
+  border: 2px solid var(--color);
+  border-radius: 0.4em;
+  display: flex;
+  padding: 5px;
+  resize: none;
+}
+
+#EMAIL_FORM input:focus{
+  border-color: darkgreen;
+}
+
+#EMAIL_FORM [type="submit"]{
+  cursor: pointer;
+}
+#EMAIL_FORM [type="submit"]:hover{
+  background-color: green;
+}
+[disabled]{
+  filter: grayscale(0.5) blur(1px);
 }
 
 @media screen and (max-width: 700px) {
