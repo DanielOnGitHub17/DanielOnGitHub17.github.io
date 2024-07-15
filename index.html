@@ -40,5 +40,56 @@
       If you are seeking a happy, math proficient, eager to learn, future computer scientist<br>
       you can reach out to me on <a href="https://www.linkedin.com/in/enesidaniel">LinkedIn</a>.
     </p>
+  <form action="#" method="post" id="EMAIL_FORM">
+   <h4>Send me an email</h4>
+   <ul>
+    <li>
+      <label for="id_name">Your name: </label>
+      <input type="text" name="name" id="id_name" required>
+    </li>
+    <li>
+      <label for="id_email">Your email: </label>
+      <input type="email" name="email" id="id_email" required>
+    </li>
+    <li>
+      <label for="id_message">Your message: </label>
+      <textarea name="message" id="id_message" cols="30" rows="6" placeholder="Your message here" required></textarea>
+    </li>
+    <li>
+      <input type="submit" value="Email Daniel Enesi">
+    </li>
+   </ul>
+   <p></p>
+  </form>
+  <script id="SEND_EMAIL">
+    addEventListener("load", function loaded(event){
+      const EMAIL_FORM = document.getElementById("EMAIL_FORM")
+      , MESSAGE_BOX = EMAIL_FORM.getElementsByTagName('p')[0]
+      , SUBMIT_BUTTON = EMAIL_FORM.querySelector("[type='submit']");
+
+      addEventListener("submit", function sendEmail(event){
+        if (event.target != EMAIL_FORM) return;
+        event.preventDefault();
+        SUBMIT_BUTTON.disabled = true;
+        MESSAGE_BOX.textContent = "";
+        let data = {}
+        , url = "https://prod-67.westus.logic.azure.com:443/workflows/b440ceb61a394f85bd6d4f630b1efa89/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=J6DPurq1RSc1v0K36RUSq8OHECRWUMVDcEIBxI0MR5I";
+        (new FormData(event.target)).forEach((value, key)=>data[key] = value);
+        fetch(url, {
+          method: "POST",
+          headers: {"Content-type": "application/json"},
+          body: JSON.stringify(data)
+        }).then(response=>{
+          MESSAGE_BOX.textContent = "Your message has been sent to Daniel successfully";
+          MESSAGE_BOX.className = "success";
+        })
+        .catch(error=>{
+          console.log(error);
+          MESSAGE_BOX.textContent = "An error occured, so your message could not be sent.";
+          MESSAGE_BOX.className = "failure";
+        }).finally(()=>SUBMIT_BUTTON.disabled = false)
+      })
+    })
+  </script>
   </body>
 </html>
