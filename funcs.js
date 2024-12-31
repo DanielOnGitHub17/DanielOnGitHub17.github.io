@@ -191,6 +191,15 @@ function switchScreen(screenID){
     get(screenID).style.display = "";
 };
 
+// events framework
+function configureEvents(events){
+    for (let type in events){
+        for (let handler of events[type]){
+            window.addEventListener(type, handler);
+        }
+    }
+}
+
 // initialize the loading element, that blocks the screen and all
 function loader(){
   let loading;
