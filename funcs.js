@@ -68,6 +68,13 @@ function sameChild(first, second){
     }
     return false
 }
+function sameArray(first, second){
+    if (first.length != second.length) return false;
+    for (let i = 0; i < first.length; i++){
+        if (first[i] != second[i]) return false;
+    }
+    return true
+}
 function showAndHide(text='Ouch', time){
     //do that it will check if info exists, create if it doesn't and style it;
     info.textContent = text;
