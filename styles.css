@@ -154,6 +154,9 @@ div > p > a:hover {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
+  nav{
+    position: relative;
+  }
   nav ul {
     flex-direction: column;
     align-items: center;
