@@ -1,178 +1,173 @@
-body{
-  flex-flow: column;
-  font: 1.3em math;
-  display: flex;
-  /* align-items: center; */
-}
-h1{
-  margin: 3px;
+/* Modern & Sleek UI with Subtle Green Accents */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2em;
+  color: #e0ffe0;
+  background: linear-gradient(135deg, #0a0f0a, #1b331b);
+  margin: 0;
   padding: 0;
-  font-size: xx-large
-}
-*{
-  clear: both;
-  /* margin: 0; */
-  --color: rgba(0, 100, 0, 0.2);
-}
-nav ul{
   display: flex;
-  padding: 10px;
-  border-radius: 0.4em;
-  list-style-type: none;
-  border: 1px solid var(--color);
-  flex-wrap: wrap;
-}
-nav ul li{
-  padding: 5px;
-}
-nav ul li:nth-child(2n-1) a{
-  background: white; color: darkgreen;
-}
-nav ul li:nth-child(2n) a, #EMAIL_FORM [type="submit"]{
-  background: rgba(0, 128, 0, 0.7); color: white;
-}
-nav a{
-  text-decoration: none; display: block;
-  border-radius: 0.3em; transition: 0.2s;
-  border: thin solid var(--color);
-  padding: .1em .3em;
-}
-nav ul li a:hover{
-  filter: contrast(3);
-  scale: 1.2;
-  border: 3px solid green;
-}
-nav ul li a:active{
-  filter: none;
-}
-/* paragraphs */
-p, div{
-  text-align: left;
-  padding: 7px;
-  font-size: .9em;
-  margin: 5px;
-}
-div{
-  --border: thin solid var(--color);
-  /* border-top: var(--border); */
-  margin-top: 0;
-  display: flex;
-  flex-flow: row;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.7;
 }
 
-div>p{
-  border: var(--border);
-  width: 600px; padding: 25px;
-  box-sizing: border-box;
-  border-radius: .5em;
-  font-size: 1em;
-  text-align: left;
+h1 {
+  font-size: 3em;
+  margin: 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
 }
 
-div>p>span, div>p>a{
+h1 a {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.3s;
+}
+
+h1 a:hover {
+  color: #00cc00;
+}
+
+nav {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.2);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 12px 18px;
+  border-radius: 50px;
+  transition: 0.3s;
+  font-weight: bold;
+  background: #1b331b;
+}
+
+nav ul li a:hover {
+  background: #00cc00;
+  color: #fff;
+}
+
+/* Project Sections */
+h3 {
+  color: #00cc00;
+  font-size: 2em;
+  margin-top: 40px;
+  text-transform: uppercase;
+}
+
+div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 40px;
+  max-width: 1200px;
+}
+
+div > p {
+  background: #1b331b;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 255, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  transition: 0.3s;
+  color: #e0ffe0;
+}
+
+div > p:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 10px 25px rgba(0, 255, 0, 0.3);
+}
+
+div > p > span {
   display: block;
   font-weight: bold;
-  border-bottom: inherit;
-  padding-bottom: 5px;
-  margin-bottom: 5px;
-  box-sizing: content-box;
-}
-div>p>a{
-  border: none;
-  margin-top: 10px;
+  margin-bottom: 10px;
+  color: #ffffff;
+  font-size: 1.3em;
 }
 
-h3{
-  margin: 5px;
-}
-
-a{
-  color: lightgreen;
+div > p > a {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+  color: #00cc00;
   text-decoration: none;
-  transition: 0.2s;
-  border-radius: inherit;
+  transition: 0.3s;
 }
-a:hover{
-  padding: 10px; background: rgba(0, 128, 0, 0.605);
+
+div > p > a:hover {
+  text-decoration: underline;
+  color: #00ff00;
+  box-shadow: 0px 0px 10px #00ff00;
 }
-a:active{
-  background: none;
-  color: black;
-}
-div>p>a, h1>a{
-    float: right;
-    padding: 10px;
-}
-[href="#top"]{
+
+[href="#top"] {
   position: fixed;
-  left: calc(100vw - 50px);
-  width: 50px;
-  bottom: 10%;
-  letter-spacing: -1px;
-  
-}
-
-/* for essays */
-article>iframe{
-  padding: 10px;
-  height: 100vh;
-  width: 90%;
-  border: 1px solid rgba(0, 128, 0, 0.2);
-}
-
-/* For email form */
-#EMAIL_FORM>h4{
-  margin: 0;
-}
-#EMAIL_FORM>ul{
-  padding: 0;
-  margin: 0;
-}
-#EMAIL_FORM>p.failure{
-  color: red;
-}
-#EMAIL_FORM>p.success{
-  color: green;
-}
-#EMAIL_FORM li{
+  bottom: 20px;
+  right: 20px;
+  background: #00cc00;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 1.8em;
+  width: 60px;
+  height: 60px;
   display: flex;
-  flex-flow: column;
-  width: fit-content;
-  padding: 4px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 3px 6px rgba(0, 255, 0, 0.3);
+  transition: 0.3s;
 }
 
-#EMAIL_FORM input, #EMAIL_FORM textarea{
-  border: 2px solid var(--color);
-  border-radius: 0.4em;
-  display: flex;
-  padding: 5px;
-  resize: none;
+[href="#top"]:hover {
+  background: #00ff00;
+  color: #1b331b;
 }
 
-#EMAIL_FORM input:focus{
-  border-color: darkgreen;
-}
-
-#EMAIL_FORM [type="submit"]{
-  cursor: pointer;
-}
-#EMAIL_FORM [type="submit"]:hover{
-  background-color: green;
-}
-[disabled]{
-  filter: grayscale(0.5) blur(1px);
-}
-
-@media screen and (max-width: 700px) {
-  body{
-    font-size: 1.15em;
-    word-spacing: .1em;
-    line-height: 1.2em;
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
   }
-}
-@media screen and (min-width: 700px) {
-  body>p{
-    width: 800px;
+
+  nav ul li {
+    margin-bottom: 10px;
+  }
+
+  div {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  div > p {
+    width: 90%;
   }
 }
