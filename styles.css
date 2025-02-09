@@ -73,6 +73,7 @@ nav ul li a {
   transition: 0.3s;
   font-weight: bold;
   background: #1b331b;
+  border: 1px solid green;
 }
 
 nav ul li a:hover {
@@ -164,14 +165,6 @@ div > p > a:hover {
 @media screen and (max-width: 768px) {
   nav{
     position: relative;
-  }
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul li {
-    margin-bottom: 10px;
   }
 
   div {
