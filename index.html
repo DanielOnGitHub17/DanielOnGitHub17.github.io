@@ -74,7 +74,7 @@
         SUBMIT_BUTTON.disabled = true;
         MESSAGE_BOX.textContent = "";
         let data = {}
-        , url = "https://prod-67.westus.logic.azure.com:443/workflows/b440ceb61a394f85bd6d4f630b1efa89/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=J6DPurq1RSc1v0K36RUSq8OHECRWUMVDcEIBxI0MR5I";
+        , url = "https://defaultdef859bf4db04164b2c19da056a4ef.b8.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/b440ceb61a394f85bd6d4f630b1efa89/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=PfAmrfV1v2ixB5Mo6ewWzmaP-q_fPIcwPvz61PlgXBI";
         (new FormData(event.target)).forEach((value, key)=>data[key] = value);
         fetch(url, {
           method: "POST",
