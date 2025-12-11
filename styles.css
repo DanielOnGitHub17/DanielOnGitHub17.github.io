@@ -98,7 +98,7 @@ div {
   max-width: 1200px;
 }
 
-div > p {
+div>p {
   background: #1b331b;
   padding: 25px;
   border-radius: 10px;
@@ -109,12 +109,12 @@ div > p {
   color: #fff;
 }
 
-div > p:hover {
+div>p:hover {
   transform: scale(1.05);
   box-shadow: 0px 10px 25px rgba(0, 255, 0, 0.3);
 }
 
-div > p > span {
+div>p>span {
   display: block;
   font-weight: bold;
   margin-bottom: 10px;
@@ -122,7 +122,7 @@ div > p > span {
   font-size: 1.3em;
 }
 
-div > p > a {
+div>p>a {
   display: block;
   margin-top: 15px;
   font-weight: bold;
@@ -131,7 +131,7 @@ div > p > a {
   transition: 0.3s;
 }
 
-div > p > a:hover {
+div>p>a:hover {
   text-decoration: underline;
   color: #00ff00;
   box-shadow: 0px 0px 10px #00ff00;
@@ -163,7 +163,7 @@ div > p > a:hover {
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-  nav{
+  nav {
     position: relative;
   }
 
@@ -172,7 +172,7 @@ div > p > a:hover {
     align-items: center;
   }
 
-  div > p {
+  div>p {
     width: 90%;
   }
 }

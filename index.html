@@ -1,96 +1,100 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniel Enesi</title>
-    <style>
-      @import url(styles.css);
-      @import url(homepage.css);
-    </style>
-  </head>
-  <body>
-    <h1>Daniel Enesi</h1>
 
-    <nav>
-      <ul>
-        <li><a href="math-web/">Math</a></li>
-        <li><a href="games/">Games</a></li>
-        <li><a href="essays/">Essays</a></li>
-        <li><a href="projects/">Projects</a></li>
-        <li><a href="https://github.com/DanielOnGitHub17">GitHub</a></li>
-        <li><a href="https://codepen.io/Dani_X">CodePen</a></li>
-        <li><a href="https://dev.to/danielx17">Dev.to</a></li>
-      </ul>
-    </nav>
-    <p>
-      I am Daniel Enesi, an enthusiastic learner with strong mathematical aptitude and proficiency in computer programming, seeking
-      opportunities to develop my skills, build my network, and apply my skills to substantial projects
-    </p>
-    <p>
-      My skills include Python and JavaScript programming; backend programming with the Django Web Framework;
-      front-end development with HTML, CSS, and JavaScript; and mathematics.
-      <br>
-      I also write sometimes (especially for my English course), so I have provided a few of my essays.
-    </p>
-    <p>I enjoy coding in Python just as much as I enjoy admiring front-end
-      projects on <a href="https://codepen.io">CodePen</a> and <a href="https://threejs.org/">Three.js</a>.
-      <br>
-      I also like playing video games, listening to gospel music, and playing table tennis.
-    </p>
-    <p>
-      If you are seeking a happy, math proficient, eager to learn, future computer scientist<br>
-      you can reach out to me on <a href="https://www.linkedin.com/in/enesidaniel">LinkedIn</a>.
-    </p>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel Enesi</title>
+  <style>
+    @import url(styles.css);
+    @import url(homepage.css);
+  </style>
+</head>
+
+<body>
+  <h1>Daniel Enesi</h1>
+
+  <nav>
+    <ul>
+      <li><a href="math-web/">Math</a></li>
+      <li><a href="games/">Games</a></li>
+      <li><a href="essays/">Essays</a></li>
+      <li><a href="projects/">Projects</a></li>
+      <li><a href="https://github.com/DanielOnGitHub17">GitHub</a></li>
+      <li><a href="https://codepen.io/Dani_X">CodePen</a></li>
+      <li><a href="https://dev.to/danielx17">Dev.to</a></li>
+    </ul>
+  </nav>
+  <p>
+    I am Daniel Enesi, an enthusiastic learner with strong mathematical aptitude and proficiency in computer
+    programming, seeking
+    opportunities to develop my skills, build my network, and apply my skills to substantial projects
+  </p>
+  <p>
+    My skills include Python and JavaScript programming; backend programming with the Django Web Framework;
+    front-end development with HTML, CSS, and JavaScript; and mathematics.
+    <br>
+    I also write sometimes (especially for my English course), so I have provided a few of my essays.
+  </p>
+  <p>I enjoy coding in Python just as much as I enjoy admiring front-end
+    projects on <a href="https://codepen.io">CodePen</a> and <a href="https://threejs.org/">Three.js</a>.
+    <br>
+    I also like playing video games, listening to gospel music, and playing table tennis.
+  </p>
+  <p>
+    If you are seeking a happy, math proficient, eager to learn, future computer scientist<br>
+    you can reach out to me on <a href="https://www.linkedin.com/in/enesidaniel">LinkedIn</a>.
+  </p>
   <form action="#" method="post" id="EMAIL_FORM">
-   <h4>Send me an email</h4>
-   <ul>
-    <li>
-      <label for="id_name">Your name: </label>
-      <input type="text" name="name" id="id_name" required>
-    </li>
-    <li>
-      <label for="id_email">Your email: </label>
-      <input type="email" name="email" id="id_email" required>
-    </li>
-    <li>
-      <label for="id_message">Your message: </label>
-      <textarea name="message" id="id_message" cols="30" rows="6" placeholder="Your message here" required></textarea>
-    </li>
-    <li>
-      <input type="submit" value="Email Daniel Enesi">
-    </li>
-   </ul>
-   <p></p>
+    <h4>Send me an email</h4>
+    <ul>
+      <li>
+        <label for="id_name">Your name: </label>
+        <input type="text" name="name" id="id_name" required>
+      </li>
+      <li>
+        <label for="id_email">Your email: </label>
+        <input type="email" name="email" id="id_email" required>
+      </li>
+      <li>
+        <label for="id_message">Your message: </label>
+        <textarea name="message" id="id_message" cols="30" rows="6" placeholder="Your message here" required></textarea>
+      </li>
+      <li>
+        <input type="submit" value="Email Daniel Enesi">
+      </li>
+    </ul>
+    <p></p>
   </form>
   <script id="SEND_EMAIL">
-    addEventListener("load", function loaded(event){
+    addEventListener("load", function loaded(event) {
       const EMAIL_FORM = document.getElementById("EMAIL_FORM")
-      , MESSAGE_BOX = EMAIL_FORM.getElementsByTagName('p')[0]
-      , SUBMIT_BUTTON = EMAIL_FORM.querySelector("[type='submit']");
+        , MESSAGE_BOX = EMAIL_FORM.getElementsByTagName('p')[0]
+        , SUBMIT_BUTTON = EMAIL_FORM.querySelector("[type='submit']");
 
-      addEventListener("submit", function sendEmail(event){
+      addEventListener("submit", function sendEmail(event) {
         if (event.target != EMAIL_FORM) return;
         event.preventDefault();
         SUBMIT_BUTTON.disabled = true;
         MESSAGE_BOX.textContent = "";
         let data = {}
-        , url = "https://defaultdef859bf4db04164b2c19da056a4ef.b8.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/b440ceb61a394f85bd6d4f630b1efa89/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=PfAmrfV1v2ixB5Mo6ewWzmaP-q_fPIcwPvz61PlgXBI";
-        (new FormData(event.target)).forEach((value, key)=>data[key] = value);
+          , url = "https://defaultdef859bf4db04164b2c19da056a4ef.b8.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/b440ceb61a394f85bd6d4f630b1efa89/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=PfAmrfV1v2ixB5Mo6ewWzmaP-q_fPIcwPvz61PlgXBI";
+        (new FormData(event.target)).forEach((value, key) => data[key] = value);
         fetch(url, {
           method: "POST",
-          headers: {"Content-type": "application/json"},
+          headers: { "Content-type": "application/json" },
           body: JSON.stringify(data)
-        }).then(response=>{
+        }).then(response => {
           MESSAGE_BOX.textContent = "Your message has been sent to Daniel successfully";
           MESSAGE_BOX.className = "success";
         })
-        .catch(error=>{
-          console.log(error);
-          MESSAGE_BOX.textContent = "An error occured, so your message could not be sent.";
-          MESSAGE_BOX.className = "failure";
-        }).finally(()=>SUBMIT_BUTTON.disabled = false)
+          .catch(error => {
+            console.log(error);
+            MESSAGE_BOX.textContent = "An error occured, so your message could not be sent.";
+            MESSAGE_BOX.className = "failure";
+          }).finally(() => SUBMIT_BUTTON.disabled = false)
       })
     })
   </script>
-  </body>
+</body>
+
 </html>
