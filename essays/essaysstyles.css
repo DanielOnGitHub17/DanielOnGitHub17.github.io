@@ -1,21 +1,9 @@
 /* Adjust iframe for better appearance in essays */
 article iframe {
-    width: 90vw;
-    height: 600px;
-    border-radius: 8px;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    transition: all 0.3s ease;
-    color: white;
-    border: 11px dotted #00cc00;
-    border-style: double;
-    /* filter: invert(1); */
-    background: #f9fff9;
-    border-right: none;
-}
-
-/* Add a hover effect for iframe */
-article iframe:hover {
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
-    transform: scale(1.03);
+    width: 100%;
+    height: 50vh;
+    border: thin solid var(--color);
+    border-radius: .2em;
+    padding: 7px;
+    box-sizing: border-box;
 }
