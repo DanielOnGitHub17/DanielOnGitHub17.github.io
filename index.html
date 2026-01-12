@@ -4,10 +4,8 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Daniel Enesi</title>
-  <style>
-    @import url(styles.css);
-    @import url(homepage.css);
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="homepage.css">
 </head>
 
 <body>
@@ -27,25 +25,22 @@
   <p>
     I am Daniel Enesi, an enthusiastic learner with strong mathematical aptitude and proficiency in computer
     programming, seeking
-    opportunities to develop my skills, build my network, and apply my skills to substantial projects
+    opportunities to advance in software engineering, build my network, and apply my learning to substantial projects
   </p>
   <p>
-    My skills include Python and JavaScript programming; backend programming with the Django Web Framework;
-    front-end development with HTML, CSS, and JavaScript; and mathematics.
-    <br>
-    I also write sometimes (especially for my English course), so I have provided a few of my essays.
-  </p>
-  <p>I enjoy coding in Python just as much as I enjoy admiring front-end
-    projects on <a href="https://codepen.io">CodePen</a> and <a href="https://threejs.org/">Three.js</a>.
-    <br>
-    I also like playing video games, listening to gospel music, and playing table tennis.
+    I linked some things I've done in this website. Explore those referenced above.<br>
+    For my other work check out my GitHub (The [4]th link on the page).
   </p>
   <p>
-    If you are seeking a happy, math proficient, eager to learn, future computer scientist<br>
-    you can reach out to me on <a href="https://www.linkedin.com/in/enesidaniel">LinkedIn</a>.
+    If you are seeking a happy (people say I smile a lot), learning-driven (currently rust and ostep),
+    software engineer (someone said I shouldn't use "aspiring" because it's undermining), <br>
+    reach out to me on <a href="https://www.linkedin.com/in/enesidaniel/">LinkedIn</a>,
   </p>
+  <h2>or</h2>
   <form action="#" method="post" id="EMAIL_FORM">
-    <h4>Send me an email</h4>
+    <h4><span>send me an email</span>
+      <input type="submit" value="&#10145;">
+    </h4>
     <ul>
       <li>
         <label for="id_name">Your name: </label>
@@ -58,9 +53,6 @@
       <li>
         <label for="id_message">Your message: </label>
         <textarea name="message" id="id_message" cols="30" rows="6" placeholder="Your message here" required></textarea>
-      </li>
-      <li>
-        <input type="submit" value="Email Daniel Enesi">
       </li>
     </ul>
     <p></p>
@@ -95,6 +87,7 @@
       })
     })
   </script>
+  <aside hidden>Please don't spam the email API endpoint in the script</aside>
 </body>
 
 </html>
