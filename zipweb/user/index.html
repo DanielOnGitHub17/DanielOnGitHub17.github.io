@@ -6,8 +6,8 @@
             if (!['ZipWebUser', 'ZipWebUserName'].every(i=>localStorage.getItem(i)))
                 document.location.href = '/login'
         </script>
-        <style>
-            @import url('../dZip.css'); @import url('styles.css'); </style>
+        <link rel="stylesheet" href="../dZip.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <input type=file id=ADDFILE name=files multiple hidden>

@@ -1,28 +1,30 @@
 <html>
+
 <head>
-<title>Login</title>
-<meta charset="utf-8">
-<style>
-@import url(../dZip.css);
-</style>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../dZip.css">
 </head>
+
 <body>
-<form method='POST' action='../cgi-bin/file.py'>
-<fieldset id='Nuser'>
-<legend>Login to access your account</legend>
-<div id='msg'></div>
-<ul>
-<li><label for='UN'>UserName: </label><input type='text' name='username' id='UN'/></li>
-<li><label for='file'>File:</label><input type='file' name='userfile' id='file'/></li>
-</ul>
-<input type='submit' value=Send />
-<p>Do not have an account? tap to <a href='../register/'>Create Account</a></p>
-<a href='../'>Home Page</a>
-<p>Forgot password? click here to <a href='../cgi-bin/password.py/'>reset</a></p>
-</fieldset>
-</form>
-<script src='../dZip.js'></script>
-<!-- <script src='login.js'> -->
-</script>
-<body>
+    <form method='POST' action='../cgi-bin/file.py'>
+        <fieldset id='Nuser'>
+            <legend>Login to access your account</legend>
+            <div id='msg'></div>
+            <ul>
+                <li><label for='UN'>UserName: </label><input type='text' name='username' id='UN' /></li>
+                <li><label for='file'>File:</label><input type='file' name='userfile' id='file' /></li>
+            </ul>
+            <input type='submit' value=Send />
+            <p>Do not have an account? tap to <a href='../register/'>Create Account</a></p>
+            <a href='../'>Home Page</a>
+            <p>Forgot password? click here to <a href='../cgi-bin/password.py/'>reset</a></p>
+        </fieldset>
+    </form>
+    <script src='../dZip.js'></script>
+    <!-- <script src='login.js'> -->
+    </script>
+
+    <body>
+
 </html>
