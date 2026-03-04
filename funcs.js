@@ -177,8 +177,12 @@ function clearArray(array) {
     });
     array.length = 0;
 }
-let make = (name = 'div') => document.createElement(name)
-    , makeSVG = (name) => document.createElementNS('http://www.w3.org/2000/svg', name)
+function make(name = "div", attrs = {}) {
+    const dom = document.createElement(name);
+    for (const attr in attrs) dom[attr] = attrs[attr];
+    return dom;
+}
+let makeSVG = (name) => document.createElementNS('http://www.w3.org/2000/svg', name)
     , get = (id) => document.getElementById(id)
     , getE = (selector, value) => document.querySelector(`[${selector}=${value}]`)
     , getS = (query) => document.querySelector(query)
