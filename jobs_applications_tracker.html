@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Internships Tracker</title>
+    <title>Jobs Tracker</title>
 </head>
 <style>
     *:not(input, td) {
@@ -87,8 +87,8 @@
 </style>
 
 <body>
-    <h2>Internships Tracker</h2>
-    <table id="internships">
+    <h2>Jobs Tracker</h2>
+    <table id="jobs">
         <tr>
             <th>Name</th>
             <th>Date Applied</th>
@@ -104,9 +104,9 @@
         <input type="submit" value="add">
     </form>
     <script>
-        class InternshipApp {
+        class JobApp {
             constructor(position, link, name, dateApplied = new Date, status = "applied") {
-                internshipObjects.push(this)
+                jobObjects.push(this)
                 this.position = position;
                 this.name = name.link(link);
                 dateApplied = new Date(dateApplied);
@@ -117,8 +117,8 @@
                         get: () => status
                         , set: (x) => {
                             status = x;
-                            InternshipApp.internshipApplications[this.position][3] = status;
-                            InternshipApp.persist()
+                            JobApp.jobApplications[this.position][3] = status;
+                            JobApp.persist()
                         }
                     }
                 })
@@ -126,34 +126,34 @@
             }
 
             build() {
-                this.container = events.internshipsTable.insertRow();
-                this.container.internship = this;
-                for (let i in InternshipApp.args) {
-                    this.container.insertCell().innerHTML = this[InternshipApp.args[i]];
+                this.container = events.jobsTable.insertRow();
+                this.container.job = this;
+                for (let i in JobApp.args) {
+                    this.container.insertCell().innerHTML = this[JobApp.args[i]];
                 }
             }
             static persist() {
-                InternshipApp.internshipApplications.sort(i => i[2]) // sort them by date applied
-                localStorage.myInternshipApplications = JSON.stringify(InternshipApp.internshipApplications);
+                JobApp.jobApplications.sort(i => i[2]) // sort them by date applied
+                localStorage.myJobApplications = JSON.stringify(JobApp.jobApplications);
                 location.reload()
             }
             static args = ["name", "dateApplied", "status"];
-            static internshipApplications = localStorage.myInternshipApplications ?
-                JSON.parse(localStorage.myInternshipApplications) : [];
+            static jobApplications = localStorage.myJobApplications ?
+                JSON.parse(localStorage.myJobApplications) : [];
 
             static buildPage() {
-                let apps = InternshipApp.internshipApplications
+                let apps = JobApp.jobApplications
                 for (let i in apps) {
-                    new InternshipApp(+i, ...apps[i])
+                    new JobApp(+i, ...apps[i])
                 }
             }
         }
 
         class Events {
             constructor() {
-                this.internshipsTable = document.querySelector("table");
+                this.jobsTable = document.querySelector("table");
                 this.add = document.querySelector("[type=submit]");
-                this.internshipsTable.addEventListener("dblclick", (event) => {
+                this.jobsTable.addEventListener("dblclick", (event) => {
                     event.stopPropagation()
                     let target = event.target
                     if ((target.tagName == "TD") && !target.childElementCount && !target.canEdit) {
@@ -164,7 +164,7 @@
                             console.log(2)
                             if (eventIn.target.textContent != initial) {
                                 target.canEdit = false;
-                                eventIn.target.parentElement.internship.status = (eventIn.target.textContent);
+                                eventIn.target.parentElement.job.status = (eventIn.target.textContent);
                             }
                         }
                     }
@@ -174,15 +174,15 @@
                 document.forms[0].addEventListener("submit", () => {
                     event.preventDefault()
                     let form = new FormData(this.add.form)
-                    InternshipApp.internshipApplications.push([...form].map(input => input[1]))
-                    InternshipApp.persist()
+                    JobApp.jobApplications.push([...form].map(input => input[1]))
+                    JobApp.persist()
 
                 })
             }
         }
         let events = new Events
-            , internshipObjects = []
-        InternshipApp.buildPage()
+            , jobObjects = []
+        JobApp.buildPage()
 
         function animateSVG() {
             let svg = new Image();
